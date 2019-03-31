@@ -16,3 +16,12 @@ C:\Users\Vita\LABS_GIT\Certification-Center\CertificationCenter\Test\obj\Debug\n
 C:\Users\Vita\LABS_GIT\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.AssemblyInfo.cs
 C:\Users\Vita\LABS_GIT\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.dll
 C:\Users\Vita\LABS_GIT\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.pdb
+D:\Git\Certification-Center\CertificationCenter\Test\bin\Debug\netcoreapp2.1\Test.deps.json
+D:\Git\Certification-Center\CertificationCenter\Test\bin\Debug\netcoreapp2.1\Test.dll
+D:\Git\Certification-Center\CertificationCenter\Test\bin\Debug\netcoreapp2.1\Test.pdb
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.csprojAssemblyReference.cache
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.csproj.CoreCompileInputs.cache
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.AssemblyInfoInputs.cache
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.AssemblyInfo.cs
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.dll
+D:\Git\Certification-Center\CertificationCenter\Test\obj\Debug\netcoreapp2.1\Test.pdb
