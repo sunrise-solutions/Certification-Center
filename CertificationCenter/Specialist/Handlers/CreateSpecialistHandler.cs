@@ -1,30 +1,46 @@
 ﻿using Mapster;
-using MediatR;
+using MySql.Data.MySqlClient;
 using Specialist.Commands;
 using Specialist.Data;
 using Specialist.Model;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Specialist.Handlers
 {
-    public class CreateSpecialistHandler : IRequestHandler<CreateSpecialistCommand, MedicalSpecialist>
+    public class CreateSpecialistHandler
     {
         private readonly SpecialistContext _context;
-        private readonly TimeSpan _expirationTime;
 
         public CreateSpecialistHandler(SpecialistContext context)
         {
             _context = context;
         }
 
-        public async Task<MedicalSpecialist> Handle(CreateSpecialistCommand request, CancellationToken cancellationToken)
+        public MedicalSpecialist Handle(CreateSpecialistCommand request)
         {
             var model = request.Adapt<MedicalSpecialist>();
+            string tempHash = Hash.FindHash(model.PasswordHash);
+            model.PasswordHash = tempHash;
 
-            //_context.Specialists.Add(model);
-            //await _context.SaveChangesAsync(cancellationToken);
+            using (MySqlConnection conn = _context.GetConnection())
+            {
+                conn.Open();
+                string query = string.Format("insert into Specialists(last_name, first_name, middle_name, email, password_hash, Health_Facilities_faculty_id) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
+                    model.LastName, model.FirstName, model.MiddleName,
+                    model.Email, model.PasswordHash, model.HealthFacilitiesFacultyId);
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    return null;
+                }
+                finally
+                {
+                    conn.CloseAsync();
+                }
+            }
 
             return model;
         }

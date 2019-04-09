@@ -6,7 +6,7 @@ namespace Specialist.Model
 {
     public class MedicalSpecialist
     {
-        public int SpecialistId { get; set; }
+        public int Id { get; set; }
 
         public string LastName { get; set; }
 

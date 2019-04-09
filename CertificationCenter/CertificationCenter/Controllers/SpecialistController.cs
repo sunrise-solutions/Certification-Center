@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Specialist.Commands;
 using Specialist.Data;
 using Specialist.Model;
+using Specialist.Handlers;
 
 namespace CertificationCenter.Controllers
 {
@@ -17,24 +18,24 @@ namespace CertificationCenter.Controllers
         public IEnumerable<MedicalSpecialist> GetAllMedicalSpecialists()
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
-            return context.GetAllSpecialists();
+            GetAllSpecialistsHandler handler = new GetAllSpecialistsHandler(context);
+            return handler.Handle();
         }
 
         [HttpGet("[action]")]
         public IEnumerable<MedicalSpecialist> GetMedicalSpecialistById(int id)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
-            return context.GetSpecialistById(id);
+            GetSpecialistByIdHandler handler = new GetSpecialistByIdHandler(context);
+            return handler.Handle(id);
         }
 
         [HttpPost("[action]")]
-        public bool CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
+        public MedicalSpecialist CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
-            var specialist = request.Adapt<MedicalSpecialist>();
-            string tempHash = Hash.FindHash(specialist.PasswordHash);
-            specialist.PasswordHash = tempHash;
-            return context.CreateSpecialist(specialist);
+            CreateSpecialistHandler handler = new CreateSpecialistHandler(context);
+            return handler.Handle(request);
         }
     }
 }
