@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Specialist.Data;
 using Test.Data;
+using UniquePassword.Data;
 
 namespace CertificationCenter
 {
@@ -27,6 +28,7 @@ namespace CertificationCenter
             services.Add(new ServiceDescriptor(typeof(SpecialistContext), new SpecialistContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.Add(new ServiceDescriptor(typeof(TestContext), new TestContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.Add(new ServiceDescriptor(typeof(HealthFacilityContext), new HealthFacilityContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(new ServiceDescriptor(typeof(UniquePasswordContext), new UniquePasswordContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.AddSwaggerGen(swagger =>
             {
                 swagger.DescribeAllEnumsAsStrings();

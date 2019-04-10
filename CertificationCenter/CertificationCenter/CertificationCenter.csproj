@@ -29,6 +29,7 @@
     <ProjectReference Include="..\HealthFacility\HealthFacility.csproj" />
     <ProjectReference Include="..\Specialist\Specialist.csproj" />
     <ProjectReference Include="..\Test\Test.csproj" />
+    <ProjectReference Include="..\UniquePassword\UniquePassword.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -1,12 +1,8 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Test.Model;
+﻿using System;
 
 namespace Test.Commands
 {
-    public class CreateTestCommand : IRequest<TrainingTest>
+    public class CreateTestCommand
     {
         public DateTime Date { get; set; }
 
