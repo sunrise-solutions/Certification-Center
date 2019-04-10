@@ -1,9 +1,0 @@
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\bin\Debug\netcoreapp2.1\HealthFacility.deps.json
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\bin\Debug\netcoreapp2.1\HealthFacility.dll
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\bin\Debug\netcoreapp2.1\HealthFacility.pdb
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.csprojAssemblyReference.cache
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.csproj.CoreCompileInputs.cache
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.AssemblyInfoInputs.cache
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.AssemblyInfo.cs
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.dll
-D:\Git\Certification-Center\CertificationCenter\HealthFacility\obj\Debug\netcoreapp2.1\HealthFacility.pdb

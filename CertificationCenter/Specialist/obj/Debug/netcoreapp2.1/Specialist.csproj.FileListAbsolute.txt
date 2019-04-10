@@ -1,9 +1,0 @@
-D:\Git\Certification-Center\CertificationCenter\Specialist\bin\Debug\netcoreapp2.1\Specialist.deps.json
-D:\Git\Certification-Center\CertificationCenter\Specialist\bin\Debug\netcoreapp2.1\Specialist.dll
-D:\Git\Certification-Center\CertificationCenter\Specialist\bin\Debug\netcoreapp2.1\Specialist.pdb
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.csprojAssemblyReference.cache
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.csproj.CoreCompileInputs.cache
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.AssemblyInfoInputs.cache
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.AssemblyInfo.cs
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.dll
-D:\Git\Certification-Center\CertificationCenter\Specialist\obj\Debug\netcoreapp2.1\Specialist.pdb
