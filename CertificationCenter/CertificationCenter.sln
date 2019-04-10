@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertificationCenter", "Cert
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Specialist", "Specialist\Specialist.csproj", "{59C89AED-4694-4F1F-9255-171D5A9BE44E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{83065087-0694-4B3C-A237-B9094ABA03E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{83065087-0694-4B3C-A237-B9094ABA03E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthFacility", "HealthFacility\HealthFacility.csproj", "{052FFA50-DECA-4982-916C-16DBE541CA85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{83065087-0694-4B3C-A237-B9094ABA03E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83065087-0694-4B3C-A237-B9094ABA03E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83065087-0694-4B3C-A237-B9094ABA03E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{052FFA50-DECA-4982-916C-16DBE541CA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052FFA50-DECA-4982-916C-16DBE541CA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052FFA50-DECA-4982-916C-16DBE541CA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052FFA50-DECA-4982-916C-16DBE541CA85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

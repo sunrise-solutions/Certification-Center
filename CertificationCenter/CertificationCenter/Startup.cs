@@ -1,3 +1,4 @@
+using HealthFacility.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,7 @@ namespace CertificationCenter
             services.AddMvc();
             services.Add(new ServiceDescriptor(typeof(SpecialistContext), new SpecialistContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.Add(new ServiceDescriptor(typeof(TestContext), new TestContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(new ServiceDescriptor(typeof(HealthFacilityContext), new HealthFacilityContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.AddSwaggerGen(swagger =>
             {
                 swagger.DescribeAllEnumsAsStrings();
