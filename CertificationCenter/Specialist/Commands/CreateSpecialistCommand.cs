@@ -1,12 +1,6 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Specialist.Model;
-
-namespace Specialist.Commands
+﻿namespace Specialist.Commands
 {
-    public class CreateSpecialistCommand : IRequest<MedicalSpecialist>
+    public class CreateSpecialistCommand
     {
         public string LastName { get; set; }
 
