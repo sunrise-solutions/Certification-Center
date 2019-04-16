@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CertificationTest\CertificationTest.csproj" />
     <ProjectReference Include="..\Course\Course.csproj" />
     <ProjectReference Include="..\HealthFacility\HealthFacility.csproj" />
     <ProjectReference Include="..\Specialist\Specialist.csproj" />

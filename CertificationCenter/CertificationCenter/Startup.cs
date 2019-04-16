@@ -1,11 +1,9 @@
+using CertificationTest.Data;
 using Course.Data;
 using HealthFacility.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Specialist.Data;
@@ -32,6 +30,7 @@ namespace CertificationCenter
             services.Add(new ServiceDescriptor(typeof(HealthFacilityContext), new HealthFacilityContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.Add(new ServiceDescriptor(typeof(UniquePasswordContext), new UniquePasswordContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.Add(new ServiceDescriptor(typeof(CourseContext), new CourseContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(new ServiceDescriptor(typeof(CertificationTestContext), new CertificationTestContext(Configuration.GetConnectionString("DefaultConnection"))));
             services.AddSwaggerGen(swagger =>
             {
                 swagger.DescribeAllEnumsAsStrings();
