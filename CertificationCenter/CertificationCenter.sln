@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Specialist", "Specialist\Sp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{83065087-0694-4B3C-A237-B9094ABA03E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthFacility", "HealthFacility\HealthFacility.csproj", "{052FFA50-DECA-4982-916C-16DBE541CA85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthFacility", "HealthFacility\HealthFacility.csproj", "{052FFA50-DECA-4982-916C-16DBE541CA85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniquePassword", "UniquePassword\UniquePassword.csproj", "{4EAD58C9-06AA-435D-9C7C-5F405E7240E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniquePassword", "UniquePassword\UniquePassword.csproj", "{4EAD58C9-06AA-435D-9C7C-5F405E7240E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course", "Course\Course.csproj", "{75CC477C-8505-4F26-A82A-214C2E8AFC43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4EAD58C9-06AA-435D-9C7C-5F405E7240E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EAD58C9-06AA-435D-9C7C-5F405E7240E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EAD58C9-06AA-435D-9C7C-5F405E7240E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CC477C-8505-4F26-A82A-214C2E8AFC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CC477C-8505-4F26-A82A-214C2E8AFC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CC477C-8505-4F26-A82A-214C2E8AFC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CC477C-8505-4F26-A82A-214C2E8AFC43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
