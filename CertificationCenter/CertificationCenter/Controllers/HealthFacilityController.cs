@@ -3,10 +3,7 @@ using HealthFacility.Data;
 using HealthFacility.Handlers;
 using HealthFacility.Model;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CertificationCenter.Controllers
 {
@@ -30,7 +27,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public MedicalHealthFacility CreateMedicalSpecialist([FromBody] CreateHealthFacitityCommand request)
+        public bool CreateMedicalSpecialist([FromBody] CreateHealthFacitityCommand request)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
             CreateHealthFacilityHandler handler = new CreateHealthFacilityHandler(context);

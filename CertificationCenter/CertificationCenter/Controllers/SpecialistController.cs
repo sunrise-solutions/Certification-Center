@@ -27,7 +27,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public MedicalSpecialist CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
+        public bool CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
             CreateSpecialistHandler handler = new CreateSpecialistHandler(context);

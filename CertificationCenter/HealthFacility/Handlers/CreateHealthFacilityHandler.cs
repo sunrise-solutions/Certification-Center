@@ -3,9 +3,6 @@ using HealthFacility.Data;
 using HealthFacility.Model;
 using Mapster;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HealthFacility.Handlers
 {
@@ -18,7 +15,7 @@ namespace HealthFacility.Handlers
             _context = context;
         }
 
-        public MedicalHealthFacility Handle(CreateHealthFacitityCommand request)
+        public bool Handle(CreateHealthFacitityCommand request)
         {
             var model = request.Adapt<MedicalHealthFacility>();
             string address = string.Format("улица {0}, дом {1}, город {2}, страна {3}", model.Address.Street, model.Address.House, model.Address.City, model.Address.Country);
@@ -34,7 +31,7 @@ namespace HealthFacility.Handlers
                 }
                 catch
                 {
-                    return null;
+                    return false;
                 }
                 finally
                 {
@@ -42,7 +39,7 @@ namespace HealthFacility.Handlers
                 }
             }
 
-            return model;
+            return true;
         }
     }
 }

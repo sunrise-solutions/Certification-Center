@@ -15,7 +15,7 @@ namespace Specialist.Handlers
             _context = context;
         }
 
-        public MedicalSpecialist Handle(CreateSpecialistCommand request)
+        public bool Handle(CreateSpecialistCommand request)
         {
             var model = request.Adapt<MedicalSpecialist>();
             string tempHash = Hash.FindHash(model.PasswordHash);
@@ -34,7 +34,7 @@ namespace Specialist.Handlers
                 }
                 catch
                 {
-                    return null;
+                    return false;
                 }
                 finally
                 {
@@ -42,7 +42,7 @@ namespace Specialist.Handlers
                 }
             }
 
-            return model;
+            return true;
         }
 
     }
