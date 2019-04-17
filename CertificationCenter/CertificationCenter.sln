@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniquePassword", "UniquePas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course", "Course\Course.csproj", "{75CC477C-8505-4F26-A82A-214C2E8AFC43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertificationTest", "CertificationTest\CertificationTest.csproj", "{0E33F62E-5219-4A05-A763-91FD9A53AFED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertificationTest", "CertificationTest\CertificationTest.csproj", "{0E33F62E-5219-4A05-A763-91FD9A53AFED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topic", "Topic\Topic.csproj", "{86D05CE9-66F8-42B9-B100-D1CA930A9DBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Question", "Question\Question.csproj", "{92C9A344-205C-4051-A18E-875FF8EFF6D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{0E33F62E-5219-4A05-A763-91FD9A53AFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E33F62E-5219-4A05-A763-91FD9A53AFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E33F62E-5219-4A05-A763-91FD9A53AFED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D05CE9-66F8-42B9-B100-D1CA930A9DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D05CE9-66F8-42B9-B100-D1CA930A9DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D05CE9-66F8-42B9-B100-D1CA930A9DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D05CE9-66F8-42B9-B100-D1CA930A9DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C9A344-205C-4051-A18E-875FF8EFF6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C9A344-205C-4051-A18E-875FF8EFF6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C9A344-205C-4051-A18E-875FF8EFF6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C9A344-205C-4051-A18E-875FF8EFF6D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
