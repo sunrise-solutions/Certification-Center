@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `certification_database`.`Questions` (
   `is_answer_4_true` TINYINT NULL,
   `answer_5` VARCHAR(100) NULL,
   `is_answer_5_true` TINYINT NULL,
-  `Topics_topic_id` TINYINT NOT NULL,
+  `Topics_topic_id` INT NOT NULL,
   PRIMARY KEY (`question_id`, `Topics_topic_id`),
   INDEX `fk_Questions_Topics1_idx` (`Topics_topic_id` ASC) VISIBLE,
   CONSTRAINT `fk_Questions_Topics1`
