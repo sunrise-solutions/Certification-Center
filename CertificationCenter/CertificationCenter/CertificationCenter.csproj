@@ -31,6 +31,7 @@
     <ProjectReference Include="..\HealthFacility\HealthFacility.csproj" />
     <ProjectReference Include="..\Specialist\Specialist.csproj" />
     <ProjectReference Include="..\Test\Test.csproj" />
+    <ProjectReference Include="..\Topic\Topic.csproj" />
     <ProjectReference Include="..\UniquePassword\UniquePassword.csproj" />
   </ItemGroup>
 
