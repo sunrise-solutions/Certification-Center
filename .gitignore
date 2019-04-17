@@ -231,3 +231,5 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+\CertificationCenter\CertificationCenter\appsettings.json
