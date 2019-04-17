@@ -6,7 +6,7 @@ namespace Test.Model
 {
     public class TrainingTest
     {
-        public int TestId { get; set; }
+        public int Id { get; set; }
 
         public DateTime Date { get; set; }
 

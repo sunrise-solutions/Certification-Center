@@ -34,7 +34,7 @@ namespace CertificationTest.Handlers
                             {
                                 Id = Convert.ToInt32(reader["certification_id"]),
                                 Date = Convert.ToDateTime(reader["date"]),
-                                Result = reader["result"].ToString(),
+                                Result = Convert.ToInt32(reader["result"]),
                                 SpecialistId = Convert.ToInt32(reader["Specialists_specialist_id"]),
                                 CourseId = Convert.ToInt32(reader["Courses_course_id"])
                             });

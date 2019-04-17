@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Test.Data;
 using Test.Model;
 
@@ -33,7 +32,7 @@ namespace Test.Handlers
                         {
                             list.Add(new TrainingTest()
                             {
-                                TestId = Convert.ToInt32(reader["training_id"]),
+                                Id = Convert.ToInt32(reader["training_id"]),
                                 Date = Convert.ToDateTime(reader["date"]),
                                 Result = Convert.ToInt32(reader["result"]),
                                 SpecialistId = Convert.ToInt32(reader["Specialists_specialist_id"]),
