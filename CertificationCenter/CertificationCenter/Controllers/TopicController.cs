@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     public class TopicController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<Topic.Model.Topic> GetAllTopicsTests()
+        public IEnumerable<Topic.Model.Topic> GetAllTopics()
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             GetAllTopicsHandler handler = new GetAllTopicsHandler(context);
