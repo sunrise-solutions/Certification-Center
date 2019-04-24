@@ -25,5 +25,7 @@
         public bool IsAnswer5True { get; set; }
 
         public int TopicId { get; set; }
+
+        public int CourseId { get; set; }
     }
 }
