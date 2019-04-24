@@ -10,11 +10,11 @@ namespace CertificationCenter.Controllers
     public class QuestionController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<Question.Model.Question> GetQuestionsByTopic(int topic)
+        public IEnumerable<Question.Model.Question> GetQuestionsByTopic(int topic/*, int course*/)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             GetQuestionsByTopicHandler handler = new GetQuestionsByTopicHandler(context);
-            return handler.Handle(topic);
+            return handler.Handle(topic/*, course*/);
         }
 
         [HttpPost("[action]")]
@@ -23,6 +23,14 @@ namespace CertificationCenter.Controllers
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             CreateQuestionHandler handler = new CreateQuestionHandler(context);
             return handler.Handle(request);
+        }
+
+        [HttpDelete("[action]")]
+        public bool DeleteQuestion(int questionId, int topicId)
+        {
+            QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
+            DeleteQuestionHandler handler = new DeleteQuestionHandler(context);
+            return handler.Handle(questionId, topicId);
         }
     }
 }
