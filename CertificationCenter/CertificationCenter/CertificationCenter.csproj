@@ -29,9 +29,16 @@
     <ProjectReference Include="..\CertificationTest\CertificationTest.csproj" />
     <ProjectReference Include="..\Course\Course.csproj" />
     <ProjectReference Include="..\HealthFacility\HealthFacility.csproj" />
+    <ProjectReference Include="..\Question\Question.csproj" />
     <ProjectReference Include="..\Specialist\Specialist.csproj" />
     <ProjectReference Include="..\Test\Test.csproj" />
+    <ProjectReference Include="..\Topic\Topic.csproj" />
     <ProjectReference Include="..\UniquePassword\UniquePassword.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\course\update\" />
+    <Folder Include="ClientApp\src\app\course\delete\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

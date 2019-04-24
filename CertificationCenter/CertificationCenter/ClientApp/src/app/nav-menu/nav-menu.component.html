@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>CertificationCenter</a>
+            <a class='navbar-brand' [routerLink]='["/"]'>Certification Center</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -18,9 +18,24 @@
                     </a>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
-                    <a [routerLink]='["/counter"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-education'></span> Counter
-                    </a>
+                    <a [routerLink]='["/course/course-create"]' (click)='collapse()'> Направление</a>
+                    <ul class='nav navbar-nav'>
+                      <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/course/course-create"]' (click)='collapse()'>
+                          <span class='glyphicon glyphicon-plus'></span> Создание направления
+                        </a>
+                      </li>
+                      <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/course/update"]' (click)='collapse()'>
+                          <span class='glyphicon glyphicon-pencil'></span> Редактирование направления
+                        </a>
+                      </li>
+                      <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/course/delete"]' (click)='collapse()'>
+                          <span class='glyphicon glyphicon-remove'></span> Удаление направления
+                        </a>
+                      </li>
+                    </ul>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/fetch-data"]' (click)='collapse()'>

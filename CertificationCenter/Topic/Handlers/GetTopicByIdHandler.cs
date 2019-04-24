@@ -1,27 +1,27 @@
-﻿using CertificationTest.Data;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using Topic.Data;
 
-namespace CertificationTest.Handlers
+namespace Topic.Handlers
 {
-    public class GetCertificationTestByIdHandler
+    public class GetTopicByIdHandler
     {
-        private readonly CertificationTestContext _context;
+        private readonly TopicContext _context;
 
-        public GetCertificationTestByIdHandler(CertificationTestContext context)
+        public GetTopicByIdHandler(TopicContext context)
         {
             _context = context;
         }
 
-        public List<Model.CertificationTest> Handle(int testId)
+        public List<Model.Topic> Handle(int topicId)
         {
-            List<Model.CertificationTest> list = new List<Model.CertificationTest>();
+            List<Model.Topic> list = new List<Model.Topic>();
 
             using (MySqlConnection conn = _context.GetConnection())
             {
                 conn.Open();
-                string query = "select * from Certification_Tests where certification_id=" + testId.ToString();
+                string query = "select * from Topics where topic_id=" + topicId.ToString();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 try
@@ -30,12 +30,11 @@ namespace CertificationTest.Handlers
                     {
                         while (reader.Read())
                         {
-                            list.Add(new Model.CertificationTest()
+                            list.Add(new Model.Topic()
                             {
-                                Id = Convert.ToInt32(reader["certification_id"]),
-                                Date = Convert.ToDateTime(reader["date"]),
-                                Result = Convert.ToInt32(reader["result"]),
-                                SpecialistId = Convert.ToInt32(reader["Specialists_specialist_id"]),
+                                Id = Convert.ToInt32(reader["topic_id"]),
+                                Name = reader["topic_name"].ToString(),
+                                CountOfQuestions = Convert.ToInt32(reader["count_of_questions"]),
                                 CourseId = Convert.ToInt32(reader["Courses_course_id"])
                             });
                         }
@@ -49,6 +48,7 @@ namespace CertificationTest.Handlers
                 {
                     conn.CloseAsync();
                 }
+
             }
             return list;
         }

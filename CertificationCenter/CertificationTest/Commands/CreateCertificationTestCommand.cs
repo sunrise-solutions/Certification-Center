@@ -6,7 +6,7 @@ namespace CertificationTest.Commands
     {
         public DateTime Date { get; set; }
 
-        public string Result { get; set; }
+        public int Result { get; set; }
 
         public int SpecialistId { get; set; }
 
