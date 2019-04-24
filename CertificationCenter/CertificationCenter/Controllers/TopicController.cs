@@ -18,7 +18,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<Topic.Model.Topic> GetTrainingTestById(int id)
+        public IEnumerable<Topic.Model.Topic> GetTopicById(int id)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             GetTopicByIdHandler handler = new GetTopicByIdHandler(context);
@@ -26,7 +26,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public bool CreateTrainingTest([FromBody] CreateTopicCommand request)
+        public bool CreateTopic([FromBody] CreateTopicCommand request)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             CreateTopicHandler handler = new CreateTopicHandler(context);

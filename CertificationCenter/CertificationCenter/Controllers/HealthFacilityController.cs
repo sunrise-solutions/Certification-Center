@@ -19,7 +19,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<MedicalHealthFacility> GetMedicalSpecialistById(int id)
+        public IEnumerable<MedicalHealthFacility> GetHealthFacilityById(int id)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
             GetHealthFacilityByIdHandler handler = new GetHealthFacilityByIdHandler(context);
@@ -27,7 +27,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public bool CreateMedicalSpecialist([FromBody] CreateHealthFacitityCommand request)
+        public bool CreateHealthFacility([FromBody] CreateHealthFacitityCommand request)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
             CreateHealthFacilityHandler handler = new CreateHealthFacilityHandler(context);

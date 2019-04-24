@@ -1,10 +1,7 @@
 ﻿using CertificationTest.Data;
 using CertificationTest.Handlers;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using CertificationTest.Model;
-using System.Threading.Tasks;
 using CertificationTest.Commands;
 
 namespace CertificationCenter.Controllers
@@ -13,7 +10,7 @@ namespace CertificationCenter.Controllers
     public class CertificationTestController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<CertificationTest.Model.CertificationTest> GetAllTrainingTests()
+        public IEnumerable<CertificationTest.Model.CertificationTest> GetAllCertificationTests()
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
             GetAllCertificationTestsHandler handler = new GetAllCertificationTestsHandler(context);
@@ -21,7 +18,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<CertificationTest.Model.CertificationTest> GetTrainingTestById(int id)
+        public IEnumerable<CertificationTest.Model.CertificationTest> GetCertificationTestById(int id)
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
             GetCertificationTestByIdHandler handler = new GetCertificationTestByIdHandler(context);
@@ -29,7 +26,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public bool CreateTrainingTest([FromBody] CreateCertificationTestCommand request)
+        public bool CreateCertificationTest([FromBody] CreateCertificationTestCommand request)
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
             CreateCertificationTestHandler handler = new CreateCertificationTestHandler(context);

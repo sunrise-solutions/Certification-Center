@@ -11,7 +11,7 @@ namespace CertificationCenter.Controllers
     public class CourseController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<MedicalCourse> GetAllTrainingTests()
+        public IEnumerable<MedicalCourse> GetAllCourses()
         {
             CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
             GetAllCoursesHandler handler = new GetAllCoursesHandler(context);
@@ -19,7 +19,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<MedicalCourse> GetTrainingTestById(int id)
+        public IEnumerable<MedicalCourse> GetCourseById(int id)
         {
             CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
             GetCourseByIdHandler handler = new GetCourseByIdHandler(context);
@@ -27,7 +27,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpPost("[action]")]
-        public bool CreateTrainingTest([FromBody] CreateCourseCommand request)
+        public bool CreateCourse([FromBody] CreateCourseCommand request)
         {
             CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
             CreateCourseHandler handler = new CreateCourseHandler(context);

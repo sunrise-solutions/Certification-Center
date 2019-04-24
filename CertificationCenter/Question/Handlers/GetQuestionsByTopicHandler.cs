@@ -42,7 +42,7 @@ namespace Question.Handlers
                             IsAnswer4True = IsTrueOrFalse(Convert.ToInt32(reader["is_answer_4_true"])),
                             Answer5 = reader["answer_5"].ToString(),
                             IsAnswer5True = IsTrueOrFalse(Convert.ToInt32(reader["is_answer_5_true"])),
-                            TopicId = Convert.ToInt32(reader["Specialists_specialist_id"])
+                            TopicId = Convert.ToInt32(reader["Topics_topic_id"])
                         });
                     }
                 }

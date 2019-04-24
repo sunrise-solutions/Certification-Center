@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     public class QuestionController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<Question.Model.Question> GetUniquePasswordByDate(int topic)
+        public IEnumerable<Question.Model.Question> GetQuestionsByTopic(int topic)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             GetQuestionsByTopicHandler handler = new GetQuestionsByTopicHandler(context);
