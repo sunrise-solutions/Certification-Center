@@ -15,14 +15,14 @@ namespace Question.Handlers
             _context = context;
         }
 
-        public bool Handle(int questionId, int topicId)
+        public bool Handle(int questionId, int topicId, int courseId)
         {
             try
             {
                 using (MySqlConnection conn = _context.GetConnection())
                 {
                     conn.Open();
-                    string query = string.Format("delete from Questions where (question_id, Topics_topic_id) = ({0}, {1})", questionId, topicId);
+                    string query = string.Format("delete from Questions where (question_id, Topics_topic_id, Topics_Courses_course_id) = ({0}, {1}, {2})", questionId, topicId, courseId);
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                     conn.CloseAsync();

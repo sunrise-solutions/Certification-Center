@@ -26,11 +26,11 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpDelete("[action]")]
-        public bool DeleteQuestion(int questionId, int topicId)
+        public bool DeleteQuestion(int questionId, int topicId, int courseId)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             DeleteQuestionHandler handler = new DeleteQuestionHandler(context);
-            return handler.Handle(questionId, topicId);
+            return handler.Handle(questionId, topicId, courseId);
         }
     }
 }
