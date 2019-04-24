@@ -32,5 +32,13 @@ namespace CertificationCenter.Controllers
             CreateTopicHandler handler = new CreateTopicHandler(context);
             return handler.Handle(request);
         }
+
+        [HttpDelete("[action]")]
+        public bool DeleteTopic(int topicId, int courseId)
+        {
+            TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
+            DeleteTopicHandler handler = new DeleteTopicHandler(context);
+            return handler.Handle(topicId, courseId);
+        }
     }
 }
