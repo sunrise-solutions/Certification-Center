@@ -37,8 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\course\update\" />
-    <Folder Include="ClientApp\src\app\course\delete\" />
+    <Folder Include="ClientApp\src\app\course\course-update\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
