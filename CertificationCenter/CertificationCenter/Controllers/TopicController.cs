@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     public class TopicController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<Topic.Model.Topic> GetAllTopicsTests()
+        public IEnumerable<Topic.Model.Topic> GetAllTopics()
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             GetAllTopicsHandler handler = new GetAllTopicsHandler(context);
@@ -31,6 +31,14 @@ namespace CertificationCenter.Controllers
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             CreateTopicHandler handler = new CreateTopicHandler(context);
             return handler.Handle(request);
+        }
+
+        [HttpDelete("[action]")]
+        public bool DeleteTopic(int topicId, int courseId)
+        {
+            TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
+            DeleteTopicHandler handler = new DeleteTopicHandler(context);
+            return handler.Handle(topicId, courseId);
         }
     }
 }
