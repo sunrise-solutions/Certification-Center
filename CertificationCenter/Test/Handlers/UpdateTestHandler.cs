@@ -3,6 +3,7 @@ using Test.Data;
 using Test.Model;
 using Test.Commands;
 using Mapster;
+using System;
 
 namespace Test.Handlers
 {
@@ -23,13 +24,15 @@ namespace Test.Handlers
             {
                 conn.Open();
 
-                string query = string.Format("update Tests set date = {1}, result= {2} specialist_id = {3}" +
-                    "topic_id = {4} where health_facility_id={0}",
+                string query = string.Format("update training_tests set date = '{1}', result= {2}, specialists_specialist_id = {3}, " +
+                    "topics_topic_id = {4}, topics_courses_course_id={5} where training_id={0}",
                     testId.ToString(),
-                    model.Date,
+                    model.Date.ToString("yyyy-MM-dd HH:mm:ss"),
                     model.Result,
                     model.SpecialistId,
-                    model.TopicId);
+                    model.TopicId,
+                    model.CourseId
+                    );
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
@@ -37,8 +40,9 @@ namespace Test.Handlers
                 {
                     cmd.ExecuteNonQuery();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    string s = ex.Message;
                     return false;
                 }
                 finally

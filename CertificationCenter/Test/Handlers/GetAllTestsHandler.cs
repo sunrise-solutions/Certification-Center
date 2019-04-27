@@ -36,7 +36,8 @@ namespace Test.Handlers
                                 Date = Convert.ToDateTime(reader["date"]),
                                 Result = Convert.ToInt32(reader["result"]),
                                 SpecialistId = Convert.ToInt32(reader["Specialists_specialist_id"]),
-                                TopicId = Convert.ToInt32(reader["Specialists_specialist_id"])
+                                TopicId = Convert.ToInt32(reader["Topics_topic_id"]),
+                                CourseId = Convert.ToInt32(reader["Topics_Courses_course_id"])
                             });
                         }
                     }
