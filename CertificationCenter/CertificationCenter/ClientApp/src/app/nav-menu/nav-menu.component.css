@@ -6,8 +6,6 @@ li .glyphicon {
 li.link-active a,
 li.link-active a:hover,
 li.link-active a:focus {
-    background-color: #4189C7;
-    color: white;
 }
 
 /* Keep the nav menu independent of scrolling and on top of other items */
@@ -17,6 +15,14 @@ li.link-active a:focus {
     left: 0;
     right: 0;
     z-index: 1;
+}
+
+.submenu {
+  display: none;
+}
+
+.mainmenu > li:hover .submenu {
+  display: block;
 }
 
 @media (min-width: 768px) {

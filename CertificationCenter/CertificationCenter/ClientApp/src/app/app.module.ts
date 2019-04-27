@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseUpdateComponent } from './course/course-update/course-update.component';
+import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CourseCreateComponent,
+    CourseUpdateComponent,
+    CourseDeleteComponent,
     FetchDataComponent
   ],
   imports: [
@@ -25,6 +29,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'course/course-create', component: CourseCreateComponent },
+      { path: 'course/course-update', component: CourseUpdateComponent },
+      { path: 'course/course-delete', component: CourseDeleteComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
