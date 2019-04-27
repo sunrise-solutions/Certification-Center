@@ -18,6 +18,13 @@ namespace UniquePassword.Handlers
 
         public bool Handle(CreateUniquePasswordCommand request)
         {
+
+
+
+            // ! Add password generator
+
+
+
             var password = request.Adapt<EverydayUniquePassword>();
             string tempHash = Hash.FindHash(password.PasswordHash);
             password.PasswordHash = tempHash;

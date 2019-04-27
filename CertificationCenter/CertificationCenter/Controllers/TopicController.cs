@@ -25,6 +25,14 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<Topic.Model.Topic> GetTopicsByCourseId(int courseId)
+        {
+            TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
+            GetTopicsByCourseIdHandler handler = new GetTopicsByCourseIdHandler(context);
+            return handler.Handle(courseId);
+        }
+
         [HttpPost("[action]")]
         public bool CreateTopic([FromBody] CreateTopicCommand request)
         {

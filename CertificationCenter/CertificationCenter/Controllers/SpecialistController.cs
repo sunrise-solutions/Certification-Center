@@ -26,6 +26,14 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<MedicalSpecialist> GetMedicalSpecialistByEmailAndPassword(string email, string password)
+        {
+            SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
+            GetSpecialistByEmailAndPasswordHandler handler = new GetSpecialistByEmailAndPasswordHandler(context);
+            return handler.Handle(email, password);
+        }
+
         [HttpPost("[action]")]
         public bool CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
         {
