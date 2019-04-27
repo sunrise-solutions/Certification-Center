@@ -33,5 +33,13 @@ namespace CertificationCenter.Controllers
             CreateCourseHandler handler = new CreateCourseHandler(context);
             return handler.Handle(request);
         }
+
+        [HttpPut("[action]")]
+        public bool UpdateCourse(int courseId, [FromBody] CreateCourseCommand request)
+        {
+            CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
+            UpdateCourseHandler handler = new UpdateCourseHandler(context);
+            return handler.Handle(courseId, request);
+        }
     }
 }

@@ -33,5 +33,13 @@ namespace CertificationCenter.Controllers
             CreateHealthFacilityHandler handler = new CreateHealthFacilityHandler(context);
             return handler.Handle(request);
         }
+
+        [HttpPut("[action]")]
+        public bool UpdateHealthFacility(int facilityId, [FromBody] CreateHealthFacitityCommand request)
+        {
+            HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
+            UpdateHealthFacilityHandler handler = new UpdateHealthFacilityHandler(context);
+            return handler.Handle(facilityId, request);
+        }
     }
 }

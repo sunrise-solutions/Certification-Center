@@ -33,6 +33,14 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
+        [HttpPut("[action]")]
+        public bool UpdateTopic(int topicId, [FromBody] CreateTopicCommand request)
+        {
+            TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
+            UpdateTopicHandler handler = new UpdateTopicHandler(context);
+            return handler.Handle(topicId, request);
+        }
+
         [HttpDelete("[action]")]
         public bool DeleteTopic(int topicId, int courseId)
         {
