@@ -41,5 +41,13 @@ namespace CertificationCenter.Controllers
             CreateSpecialistHandler handler = new CreateSpecialistHandler(context);
             return handler.Handle(request);
         }
+
+        [HttpPut("[action]")]
+        public bool UpdateMedicalSpecialist(int specialistId, [FromBody] CreateSpecialistCommand request)
+        {
+            SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
+            UpdateSpecialistHandler handler = new UpdateSpecialistHandler(context);
+            return handler.Handle(specialistId, request);
+        }
     }
 }

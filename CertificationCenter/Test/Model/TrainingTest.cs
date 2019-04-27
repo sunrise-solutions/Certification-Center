@@ -13,5 +13,7 @@ namespace Test.Model
         public int SpecialistId { get; set; }
 
         public int TopicId { get; set; }
+
+        public int CourseId { get; set; }
     }
 }

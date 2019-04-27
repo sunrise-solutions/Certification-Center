@@ -33,5 +33,13 @@ namespace CertificationCenter.Controllers
             CreateTestHandler handler = new CreateTestHandler(context);
             return handler.Handle(request);
         }
+
+        [HttpPut("[action]")]
+        public bool UpdateTrainingTest(int testId, [FromBody] CreateTestCommand request)
+        {
+            TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
+            UpdateTestHandler handler = new UpdateTestHandler(context);
+            return handler.Handle(testId, request);
+        }
     }
 }

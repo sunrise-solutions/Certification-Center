@@ -32,5 +32,13 @@ namespace CertificationCenter.Controllers
             DeleteQuestionHandler handler = new DeleteQuestionHandler(context);
             return handler.Handle(questionId, topicId, courseId);
         }
+
+        [HttpPut("[action]")]
+        public bool UpdateQuestion(int questionId, [FromBody] CreateQuestionCommand request)
+        {
+            QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
+            UpdateQuestionHandler handler = new UpdateQuestionHandler(context);
+            return handler.Handle(questionId, request);
+        }
     }
 }
