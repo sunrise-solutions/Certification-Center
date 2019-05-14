@@ -1,8 +1,11 @@
-<h1>Удаление направления</h1>
-<div>
+<div *ngFor="let course of courses">
   <div>
-    <label>Идентификатор </label>
-    <input type="text" ng-model="id">
+    <label>Название направления </label>
+    <label>{{ course.name || 'No name'}}</label>
+  </div>
+  <div>
+    <label>Квалификация(номер) </label>
+    {{ course.qualification || 0}}
   </div>
 </div>
-<button type="button" class="btn btn-act btn-full" (click)="updateCourse()">Удалить</button>
+ 

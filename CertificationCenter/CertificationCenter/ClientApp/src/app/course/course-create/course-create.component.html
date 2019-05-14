@@ -3,11 +3,11 @@
 <div>
   <div>
     <label>Название направления </label>
-    <input type="text" ng-model="courseName">
+    <input type="text" [(ngModel)]="courseName">
   </div>
   <div>
     <label>Квалификация(номер) </label>
-    <input type="text" ng-model="qualification">
+    <input type="text" [(ngModel)]="qualification">
   </div>
 </div>
 <button type="button" class="btn btn-act btn-full" (click)="createCourse()">Создать</button>
