@@ -12,4 +12,11 @@ body {
 
 h1 {
   font-weight: 300;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
 }
