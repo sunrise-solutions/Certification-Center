@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { API_BASE_URL } from '../../shared/shared.module';
 import { Router } from '@angular/router';
 import { Course } from '../Models/Course';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-course-create-component',
@@ -12,7 +13,7 @@ import { Course } from '../Models/Course';
 export class CourseCreateComponent {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient, private ntf: NotificationsService
   ) { }
 
   public course: Course = new Course();
@@ -20,14 +21,17 @@ export class CourseCreateComponent {
   public qualification = 0;
 
   public createCourse() {
-      this.course.Name = this.courseName;
-      console.log(this.course.Name);
-      this.course.Qualification = this.qualification;
-      console.log(this.course.Qualification);
+      this.course.name = this.courseName;
+      console.log(this.course.name);
+      this.course.qualification = this.qualification;
+      console.log(this.course.qualification);
       const body = {Name: this.courseName, Qualification: this.qualification};
       console.log(body);
       return this.http.post('http://localhost:55683//api/Course/CreateCourse', body).subscribe(
+        () => {console.log("success");
+          this.ntf.success('Успешно', 'Направление добавлено');},
           error => {
+            this.ntf.error('Ошибка', 'Направление не добавлено');
             return console.log(error);
           }
       );
