@@ -9,7 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
-import { CourseDeleteComponent } from './course/course-delete/course-delete.component';
+import { CourseViewComponent } from './course/course-view/course-view.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     HomeComponent,
     CourseCreateComponent,
     CourseUpdateComponent,
-    CourseDeleteComponent,
+    CourseViewComponent,
     FetchDataComponent
   ],
   imports: [
@@ -30,7 +30,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'course/course-create', component: CourseCreateComponent },
       { path: 'course/course-update', component: CourseUpdateComponent },
-      { path: 'course/course-delete', component: CourseDeleteComponent },
+      { path: 'course/course-view', component: CourseViewComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],

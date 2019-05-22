@@ -33,6 +33,19 @@ export class CourseCreateComponent {
       );
 
   }
+
+  isValidLength(str: String) {
+    return str.length <= 100 ? true : false;
+  }
+
+  isEmpty(str: String) {
+    return str.length != 0 ? true : false;
+  }
+
+  isNumber(num: any) {
+    var value = parseInt(num, 10);
+    return value !== NaN && num !== undefined;
+  }
 }
 //'http://localhost:55683//api/Course/CreateCourse'
 

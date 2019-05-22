@@ -4,11 +4,11 @@ import { Course } from '../Models/Course';
 import { API_BASE_URL } from '../../shared/shared.module';
 
 @Component({
-  selector: 'app-course-delete-component',
-  templateUrl: './course-delete.component.html',
+  selector: 'app-course-view-component',
+  templateUrl: './course-view.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class CourseDeleteComponent implements OnInit{
+export class CourseViewComponent implements OnInit{
   id = 0;
 
   courses: Course[] = [];
