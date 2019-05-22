@@ -7,7 +7,8 @@ import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-course-create-component',
-  templateUrl: './course-create.component.html'
+  templateUrl: './course-create.component.html',
+  styleUrls: ['../course.component.css']
 })
 
 export class CourseCreateComponent {

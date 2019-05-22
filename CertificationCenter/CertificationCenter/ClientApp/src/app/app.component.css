@@ -4,3 +4,12 @@
     padding-top: 50px;
   }
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 300;
+}

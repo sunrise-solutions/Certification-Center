@@ -10,11 +10,11 @@ li.link-active a:focus {
 
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .submenu {
@@ -62,4 +62,16 @@ li.link-active a:focus {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #8ab6a3;
+  font-size: 24px;
 }

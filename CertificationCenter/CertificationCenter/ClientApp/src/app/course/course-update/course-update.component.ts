@@ -5,7 +5,8 @@ import { Course } from '../Models/Course';
 
 @Component({
   selector: 'app-course-update-component',
-  templateUrl: './course-update.component.html'
+  templateUrl: './course-update.component.html',
+  styleUrls: ['../course.component.css']
 })
 export class CourseUpdateComponent implements OnInit{
   constructor(
