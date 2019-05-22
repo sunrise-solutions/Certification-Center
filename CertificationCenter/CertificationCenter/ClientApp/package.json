@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --extract-css",
-    "build": "ng build --extract-css",
+    "start": "ng serve",
+    "build": "ng build",
     "build:ssr": "npm run build -- --app=ssr --output-hashing=media",
     "test": "ng test",
     "lint": "ng lint",
@@ -28,9 +28,11 @@
     "bootstrap": "^3.4.1",
     "core-js": "^2.4.1",
     "rxjs": "^6.5.2",
+    "tslib": "^1.9.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
     "@angular/cli": "7.3.9",
     "@angular/compiler-cli": "7.2.15",
     "@angular/language-service": "7.2.15",
