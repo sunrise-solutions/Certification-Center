@@ -9,7 +9,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class CertificationTestController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<CertificationTest.Model.CertificationTest> GetAllCertificationTests()
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
@@ -17,7 +17,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("{id:int:min(1)}")]
         public IEnumerable<CertificationTest.Model.CertificationTest> GetCertificationTestById(int id)
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
@@ -25,7 +25,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateCertificationTest([FromBody] CreateCertificationTestCommand request)
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
@@ -33,12 +33,12 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateCertificationTest(int certificationTestId, [FromBody] CreateCertificationTestCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateCertificationTest(int id, [FromBody] CreateCertificationTestCommand request)
         {
             CertificationTestContext context = HttpContext.RequestServices.GetService(typeof(CertificationTestContext)) as CertificationTestContext;
             UpdateCertificationTestHandler handler = new UpdateCertificationTestHandler(context);
-            return handler.Handle(certificationTestId, request);
+            return handler.Handle(id, request);
         }
     }
 }

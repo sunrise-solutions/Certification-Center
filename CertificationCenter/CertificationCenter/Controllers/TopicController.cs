@@ -9,7 +9,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class TopicController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<Topic.Model.Topic> GetAllTopics()
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
@@ -17,7 +17,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("{id:int:min(1)}")]
         public IEnumerable<Topic.Model.Topic> GetTopicById(int id)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
@@ -25,15 +25,15 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
-        [HttpGet("[action]")]
-        public IEnumerable<Topic.Model.Topic> GetTopicsByCourseId(int courseId)
+        [HttpGet("course/{id:int:min(1)}")]
+        public IEnumerable<Topic.Model.Topic> GetTopicsByCourseId(int id)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             GetTopicsByCourseIdHandler handler = new GetTopicsByCourseIdHandler(context);
-            return handler.Handle(courseId);
+            return handler.Handle(id);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateTopic([FromBody] CreateTopicCommand request)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
@@ -41,20 +41,20 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateTopic(int topicId, [FromBody] CreateTopicCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateTopic(int id, [FromBody] CreateTopicCommand request)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             UpdateTopicHandler handler = new UpdateTopicHandler(context);
-            return handler.Handle(topicId, request);
+            return handler.Handle(id, request);
         }
 
-        [HttpDelete("[action]")]
-        public bool DeleteTopic(int topicId, int courseId)
+        [HttpDelete("{id:int:min(1)}")]
+        public bool DeleteTopic(int id, int courseId)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             DeleteTopicHandler handler = new DeleteTopicHandler(context);
-            return handler.Handle(topicId, courseId);
+            return handler.Handle(id, courseId);
         }
     }
 }

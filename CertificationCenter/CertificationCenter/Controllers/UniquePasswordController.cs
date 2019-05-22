@@ -11,7 +11,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class UniquePasswordController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet("date")]
         public IEnumerable<EverydayUniquePassword> GetUniquePasswordByDate(DateTime date)
         {
             UniquePasswordContext context = HttpContext.RequestServices.GetService(typeof(UniquePasswordContext)) as UniquePasswordContext;
@@ -19,7 +19,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(date);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateUniquePassword([FromBody] CreateUniquePasswordCommand request)
         {
             UniquePasswordContext context = HttpContext.RequestServices.GetService(typeof(UniquePasswordContext)) as UniquePasswordContext;

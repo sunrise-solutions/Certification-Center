@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class TestController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<TrainingTest> GetAllTrainingTests()
         {
             TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
@@ -18,7 +18,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("{id:int:min(1)}")]
         public IEnumerable<TrainingTest> GetTrainingTestById(int id)
         {
             TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
@@ -26,7 +26,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateTrainingTest([FromBody] CreateTestCommand request)
         {
             TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
@@ -34,12 +34,12 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateTrainingTest(int testId, [FromBody] CreateTestCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateTrainingTest(int id, [FromBody] CreateTestCommand request)
         {
             TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
             UpdateTestHandler handler = new UpdateTestHandler(context);
-            return handler.Handle(testId, request);
+            return handler.Handle(id, request);
         }
     }
 }

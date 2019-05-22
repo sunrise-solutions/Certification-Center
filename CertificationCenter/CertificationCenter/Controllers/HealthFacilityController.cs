@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class HealthFacilityController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<MedicalHealthFacility> GetAllHealthFacilities()
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
@@ -18,7 +18,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("{id:int:min(1)}")]
         public IEnumerable<MedicalHealthFacility> GetHealthFacilityById(int id)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
@@ -26,7 +26,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(id);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateHealthFacility([FromBody] CreateHealthFacitityCommand request)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
@@ -34,12 +34,12 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateHealthFacility(int facilityId, [FromBody] CreateHealthFacitityCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateHealthFacility(int id, [FromBody] CreateHealthFacitityCommand request)
         {
             HealthFacilityContext context = HttpContext.RequestServices.GetService(typeof(HealthFacilityContext)) as HealthFacilityContext;
             UpdateHealthFacilityHandler handler = new UpdateHealthFacilityHandler(context);
-            return handler.Handle(facilityId, request);
+            return handler.Handle(id, request);
         }
     }
 }
