@@ -22,7 +22,7 @@ export class CourseViewComponent implements OnInit{
   }
 
   loadCourses() {
-    this.http.get('http://localhost:55683/api/Course/GetAllCourses')
+    this.http.get('http://localhost:55683/api/Course')
     .subscribe(
       (data: Course[])=> { 
         this.courses = data;
