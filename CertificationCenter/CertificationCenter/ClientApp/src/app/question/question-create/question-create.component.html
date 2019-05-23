@@ -1,0 +1,74 @@
+<h1>Создание вопроса</h1>
+<br>
+<form>
+  <div class="form-group">
+    <div class="form-row">
+      <label>Вопрос</label>
+      <input class="form-control" type="text" [(ngModel)]="description" name="description">
+      <span class="control-error" *ngIf="!isValidLength(description)">Вопрос должен быть не больше 100 символов.</span>
+      <span class="control-error" *ngIf="!isEmpty(description)">Вопрос необходимо заполнить.</span>
+    </div>
+    <br>
+    <div class="form-row">
+      <label>Ответ 1</label>
+      <input class="form-control" type="text" [(ngModel)]="answer1" name="answer1">
+      <span class="control-error" *ngIf="!isEmpty(answer1)">Ответ 1 необходимо заполнить.</span>    
+    </div>
+    <div class="form-row">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="isAnswer1True" id="isAnswer1True" checked>
+        <label class="custom-control-label" for="isAnswer1True">Правильно</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Ответ 2</label>
+      <input class="form-control" type="text" [(ngModel)]="answer2" name="answer2">
+      <span class="control-error" *ngIf="!isEmpty(answer2)">Ответ 2 необходимо заполнить.</span>    
+    </div>
+    <div class="form-row">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="isAnswer2True" id="isAnswer2True" checked>
+        <label class="custom-control-label" for="isAnswer2True">Правильно</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Ответ 3</label>
+      <input class="form-control" type="text" [(ngModel)]="answer3" name="answer3">
+      <span class="control-error" *ngIf="!isEmpty(answer3)">Ответ 3 необходимо заполнить.</span>    
+    </div>
+    <div class="form-row">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="isAnswer3True" id="isAnswer3True" checked>
+        <label class="custom-control-label" for="isAnswer3True">Правильно</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Ответ 4</label>
+      <input class="form-control" type="text" [(ngModel)]="answer4" name="answer4">
+      <span class="control-error" *ngIf="!isEmpty(answer4)">Ответ 4 необходимо заполнить.</span>    
+    </div>
+    <div class="form-row">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="isAnswer4True" id="isAnswer4True" checked>
+        <label class="custom-control-label" for="isAnswer4True">Правильно</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Ответ 5</label>
+      <input class="form-control" type="text" [(ngModel)]="answer5" name="answer5">
+      <span class="control-error" *ngIf="!isEmpty(answer5)">Ответ 5 необходимо заполнить.</span>    
+    </div>
+    <div class="form-row">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="isAnswer5True" id="isAnswer5True" checked>
+        <label class="custom-control-label" for="isAnswer5True">Правильно</label>
+      </div>
+    </div>
+    <br>
+    <div class="form-row text-center button">
+      <button type="button" class="btn btn-act btn-default" (click)="createCourse()">
+        Добавить
+      </button>
+    </div>
+  </div>
+</form>
