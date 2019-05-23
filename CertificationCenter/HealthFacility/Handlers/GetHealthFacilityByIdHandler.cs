@@ -16,7 +16,7 @@ namespace HealthFacility.Handlers
             _context = context;
         }
 
-        public List<MedicalHealthFacility> Handle(int facitityId)
+        public MedicalHealthFacility Handle(int facitityId)
         {
             List<MedicalHealthFacility> list = new List<MedicalHealthFacility>();
 
@@ -52,7 +52,7 @@ namespace HealthFacility.Handlers
                     conn.CloseAsync();
                 }
             }
-            return list;
+            return list[0];
         }
     }
 }
