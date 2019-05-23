@@ -30,7 +30,7 @@ export class CourseCreateComponent {
         console.log(this.course.qualification);
         const body = {Name: this.courseName, Qualification: this.qualification};
         console.log(body);
-        return this.http.post('http://localhost:55683//api/Course/CreateCourse', body).subscribe(
+        return this.http.post('http://localhost:55683//api/Course', body).subscribe(
           () => {console.log("success");
             this.ntf.success('Успешно', 'Направление добавлено');},
             error => {
@@ -40,7 +40,7 @@ export class CourseCreateComponent {
         );
       }
       else {
-        this.ntf.error('Ошибка', 'Данные не верные');
+        this.ntf.error('Ошибка', 'Данные неверные');
       }
 
   }
@@ -54,6 +54,10 @@ export class CourseCreateComponent {
   }
 
   isNumber(num: any) {
+    // if (num === undefined) 
+    // {
+    //   return false;
+    // }
     var value = parseInt(num, 10);
     return value !== NaN && num !== undefined;
   }

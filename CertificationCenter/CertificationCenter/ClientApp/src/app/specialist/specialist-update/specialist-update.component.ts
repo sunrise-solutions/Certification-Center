@@ -62,7 +62,7 @@ export class SpecialistUpdateComponent implements OnInit{
       );
     }
     else {
-      this.ntf.error('Ошибка', 'Данные не верные');
+      this.ntf.error('Ошибка', 'Данные неверные');
     }
 
   }
@@ -76,6 +76,10 @@ export class SpecialistUpdateComponent implements OnInit{
   }
 
   isNumber(num: any) {
+    // if (num === undefined) 
+    // {
+    //   return false;
+    // }
     var value = parseInt(num, 10);
     return value !== NaN && num !== undefined;
   }
