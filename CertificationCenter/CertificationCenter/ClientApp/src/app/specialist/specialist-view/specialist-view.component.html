@@ -11,13 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr mdbTableCol *ngFor="let specialist of specialists;let facilityIndex = index;">
+      <tr mdbTableCol *ngFor="let specialist of specialists; let i = index">
         <td>{{specialist.lastName || 'No name'}}</td>
         <td>{{specialist.firstName || 'No name'}}</td>
         <td>{{specialist.middleName || 'No name'}}</td>
         <td>{{specialist.email || 'No email'}}</td>
-        <td>{{specialist.passwordHash || 'No password'}}</td>
-        <td>{{facilities[facilityIndex] || 'No facility'}}</td>
+        <td>{{specialist.passwordHash || '********'}}</td>
+        <td>{{facilities[i].name || 'No facility'}}</td>
       </tr>
     </tbody>
 </table>

@@ -13,8 +13,8 @@ import { Facility } from '../Models/Facility';
 export class SpecialistViewComponent implements OnInit{
   id = 0;
 
-  specialists: Specialist[] = [];
-  facilities: Facility[] = [];
+  public specialists: Specialist[] = [];
+  public facilities: Facility[] = [];
 
   constructor(
     private http: HttpClient,
@@ -32,25 +32,28 @@ export class SpecialistViewComponent implements OnInit{
         console.log(data); // для проверки приходящих данных
         console.log(this.specialists); // в консоли
         for (let index = 0; index < data.length; index++) {
-          this.facilities.push(this.findFacility(data[index].healthFacilitiesFacultyId));
+          this.facilities.push(this.findFacility(this.specialists[index].healthFacilitiesFacultyId));
         }
    }, (error) => { console.log('an error occured!'); console.log(error);}
     );
+    console.log(this.facilities);
   }
 
   findFacility(id: number)
   {
-    let facility: Facility;
-    this.http.get('http://localhost:55683/api/HealthFacility/' + id).subscribe((result: Facility) => {
-      facility = result;
+    var f = new Facility();
+    this.http.get<Facility>('http://localhost:55683/api/HealthFacility/' + id).subscribe((result: Facility) => {
       console.log(result);
+      f.name = result.name;
+      f.address = result.address;
+      f.id = result.id;
     },
       error => {
         return console.log(error);
       }
      );
-    return facility;
-
+    
+     return f;
   }
   
 }
