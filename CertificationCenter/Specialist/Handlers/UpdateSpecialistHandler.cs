@@ -42,6 +42,7 @@ namespace Specialist.Handlers
                 }
                 catch (Exception ex)
                 {
+                    string s = ex.Message;
                     return false;
                 }
                 finally

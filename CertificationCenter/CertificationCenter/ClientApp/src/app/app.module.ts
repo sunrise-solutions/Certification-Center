@@ -18,6 +18,11 @@ import { MaterialModule } from './material/material.module';
 import { SpecialistCreateComponent } from './specialist/specialist-create/specialist-create.component';
 import { SpecialistUpdateComponent } from './specialist/specialist-update/specialist-update.component';
 import { SpecialistViewComponent } from './specialist/specialist-view/specialist-view.component';
+import { TopicCreateComponent } from './topic/topic-create/topic-create.component';
+import { TopicUpdateComponent } from './topic/topic-update/topic-update.component';
+import { TopicViewComponent } from './topic/topic-view/topic-view.component';
+import { TopicDeleteComponent } from './topic/topic-delete/topic-delete.component';
+import { FooterComponent } from './footer/footer.component';
 //import { MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -31,7 +36,12 @@ import { SpecialistViewComponent } from './specialist/specialist-view/specialist
     SpecialistCreateComponent,
     SpecialistUpdateComponent,
     SpecialistViewComponent,
-    FetchDataComponent
+    TopicCreateComponent,
+    TopicUpdateComponent,
+    TopicViewComponent,
+    TopicDeleteComponent,
+    FetchDataComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,7 +59,11 @@ import { SpecialistViewComponent } from './specialist/specialist-view/specialist
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'specialist/specialist-create', component: SpecialistCreateComponent },
       { path: 'specialist/specialist-update', component: SpecialistUpdateComponent },
-      { path: 'specialist/specialist-view', component: SpecialistViewComponent }
+      { path: 'specialist/specialist-view', component: SpecialistViewComponent },
+      { path: 'topic/topic-create', component: TopicCreateComponent },
+      { path: 'topic/topic-update', component: TopicUpdateComponent },
+      { path: 'topic/topic-view', component: TopicViewComponent },
+      { path: 'topic/topic-delete', component: TopicDeleteComponent }
     ]),
     SimpleNotificationsModule.forRoot({
       timeOut: 5000,
@@ -57,6 +71,10 @@ import { SpecialistViewComponent } from './specialist/specialist-view/specialist
     })
   ],
   providers: [],
+  exports: [
+    FooterComponent,
+    //Error404PageComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
