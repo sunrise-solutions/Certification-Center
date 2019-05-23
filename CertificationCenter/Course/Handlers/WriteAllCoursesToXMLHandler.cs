@@ -145,7 +145,7 @@ namespace Course.Handlers
                 //добавляем в ElementTable_Data
                 ElementTable_Data.AppendChild(ElementRow);
 
-                /*<field name="id"></field>*/
+                /*<field name="course_id"></field>*/
                 //создание дочернего элемента уровня вложенности root/child/child/child
                 XmlElement ElementFieldId = XmlDoc.CreateElement("field");
                 //создание атрибута
@@ -155,7 +155,7 @@ namespace Course.Handlers
                 //добавляем в ElementRow
                 ElementRow.AppendChild(ElementFieldId);
 
-                /*<field name="name"></field>*/
+                /*<field name="course_name"></field>*/
                 //создание дочернего элемента уровня вложенности root/child/child/child
                 XmlElement ElementFieldName = XmlDoc.CreateElement("field");
                 //создание атрибута
@@ -165,7 +165,7 @@ namespace Course.Handlers
                 //добавляем в ElementRow
                 ElementRow.AppendChild(ElementFieldName);
 
-                /*<field name="amount"></field>*/
+                /*<field name="qualification"></field>*/
                 //создание дочернего элемента уровня вложенности root/child/child/child
                 XmlElement ElementFieldAmount = XmlDoc.CreateElement("field");
                 //создание атрибута

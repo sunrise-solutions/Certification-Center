@@ -4,7 +4,7 @@ h1 {
   color: #538670;
 }
 
-form, td {
+form, td, body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
