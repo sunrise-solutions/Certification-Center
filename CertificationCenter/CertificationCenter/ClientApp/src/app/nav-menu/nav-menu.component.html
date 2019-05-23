@@ -46,6 +46,11 @@
                   </a>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/topic/topic-view"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-search'></span> Просмотр тем
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
                   <a [routerLink]='["/topic/topic-delete"]' (click)='collapse()'>
                     <span class='glyphicon glyphicon-remove'></span> Удаление темы
                   </a>

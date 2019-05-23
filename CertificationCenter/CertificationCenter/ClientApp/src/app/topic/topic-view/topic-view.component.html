@@ -1,0 +1,17 @@
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Название</th>
+        <th scope="col">Количество вопросов</th>
+        <th scope="col">Направление</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let topic of topics; let i = index">
+        <td>{{topic.name || 'No name'}}</td>
+        <td>{{topic.countOfQuestions || 0}}</td>
+        <td>{{courses[i].name || 'No course'}}</td>
+      </tr>
+    </tbody>
+</table>

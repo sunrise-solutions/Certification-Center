@@ -50,9 +50,11 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpDelete("{id:int:min(1)}")]
-        public bool DeleteTopic(int id, int courseId)
+        public bool DeleteTopic(int id)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
+            GetTopicByIdHandler handlerGetCourse = new GetTopicByIdHandler(context);
+            int courseId = handlerGetCourse.Handle(id).CourseId;
             DeleteTopicHandler handler = new DeleteTopicHandler(context);
             return handler.Handle(id, courseId);
         }
