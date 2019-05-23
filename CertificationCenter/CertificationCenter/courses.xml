@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Certification Center database-->
+<database name="certification-center">
+  <!--Описание структуры таблицы-->
+  <table_structure name="courses">
+    <field Field="course_id" type="int" />
+    <field Field="course_name" type="string" />
+    <field Field="qualification" type="int" />
+  </table_structure>
+  <!--Данные таблицы-->
+  <table_data name="courses">
+    <row>
+      <field name="course_id">1</field>
+      <field name="course_name">A</field>
+      <field name="qualification">0</field>
+    </row>
+    <row>
+      <field name="course_id">2</field>
+      <field name="course_name">B</field>
+      <field name="qualification">0</field>
+    </row>
+    <row>
+      <field name="course_id">3</field>
+      <field name="course_name">C</field>
+      <field name="qualification">0</field>
+    </row>
+    <row>
+      <field name="course_id">4</field>
+      <field name="course_name">D</field>
+      <field name="qualification">0</field>
+    </row>
+    <row>
+      <field name="course_id">5</field>
+      <field name="course_name">E</field>
+      <field name="qualification">1</field>
+    </row>
+  </table_data>
+</database>

@@ -26,6 +26,14 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
+        [HttpGet("xls")]
+        public bool WriteAllCoursesToXLS()
+        {
+            CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
+            WriteAllCoursesToXLSHandler handler = new WriteAllCoursesToXLSHandler(context);
+            return handler.Handle();
+        }
+
         [HttpGet("{id:int:min(1)}")]
         public MedicalCourse GetCourseById(int id)
         {
