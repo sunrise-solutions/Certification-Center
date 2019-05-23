@@ -19,7 +19,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("{id:int:min(1)}")]
-        public IEnumerable<MedicalSpecialist> GetMedicalSpecialistById(int id)
+        public MedicalSpecialist GetMedicalSpecialistById(int id)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
             GetSpecialistByIdHandler handler = new GetSpecialistByIdHandler(context);

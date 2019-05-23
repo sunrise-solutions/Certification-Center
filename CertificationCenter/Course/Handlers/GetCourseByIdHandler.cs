@@ -15,7 +15,7 @@ namespace Course.Handlers
             _context = context;
         }
 
-        public List<MedicalCourse> Handle(int specialistId)
+        public MedicalCourse Handle(int specialistId)
         {
             List<MedicalCourse> list = new List<MedicalCourse>();
 
@@ -49,7 +49,7 @@ namespace Course.Handlers
                     conn.CloseAsync();
                 }
             }
-            return list;
+            return list[0];
         }
     }
 }

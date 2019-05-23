@@ -15,7 +15,7 @@ namespace Specialist.Handlers
             _context = context;
         }
 
-        public List<MedicalSpecialist> Handle(int specialistId)
+        public MedicalSpecialist Handle(int specialistId)
         {
             List<MedicalSpecialist> list = new List<MedicalSpecialist>();
 
@@ -52,7 +52,7 @@ namespace Specialist.Handlers
                     conn.CloseAsync();
                 }
             }
-            return list;
+            return list[0];
         }
     }
 }

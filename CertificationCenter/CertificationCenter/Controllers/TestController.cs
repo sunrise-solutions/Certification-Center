@@ -19,7 +19,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("{id:int:min(1)}")]
-        public IEnumerable<TrainingTest> GetTrainingTestById(int id)
+        public TrainingTest GetTrainingTestById(int id)
         {
             TestContext context = HttpContext.RequestServices.GetService(typeof(TestContext)) as TestContext;
             GetTestByIdHandler handler = new GetTestByIdHandler(context);

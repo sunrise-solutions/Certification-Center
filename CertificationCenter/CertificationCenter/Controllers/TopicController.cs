@@ -18,7 +18,7 @@ namespace CertificationCenter.Controllers
         }
 
         [HttpGet("{id:int:min(1)}")]
-        public IEnumerable<Topic.Model.Topic> GetTopicById(int id)
+        public Topic.Model.Topic GetTopicById(int id)
         {
             TopicContext context = HttpContext.RequestServices.GetService(typeof(TopicContext)) as TopicContext;
             GetTopicByIdHandler handler = new GetTopicByIdHandler(context);

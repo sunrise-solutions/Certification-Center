@@ -9,7 +9,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class QuestionController : Controller
     {
-        [HttpGet("{id:int:min(1)}")]
+        [HttpGet("{topic:int:min(1)}")]
         public IEnumerable<Question.Model.Question> GetQuestionsByTopic(int topic/*, int course*/)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;

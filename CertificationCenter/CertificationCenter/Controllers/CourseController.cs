@@ -27,7 +27,7 @@ namespace CertificationCenter.Controllers
         //}
 
         [HttpGet("{id:int:min(1)}")]
-        public IEnumerable<MedicalCourse> GetCourseById(int id)
+        public MedicalCourse GetCourseById(int id)
         {
             CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
             GetCourseByIdHandler handler = new GetCourseByIdHandler(context);
