@@ -1,0 +1,23 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #538670;
+}
+
+form, td, body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+th {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #538670;
+}
+
+.btn {
+  margin: 10px;
+  width: 40%;
+  background-color: #00a077;
+  color: #ffffff;
+}

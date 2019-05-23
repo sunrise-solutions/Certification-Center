@@ -1,0 +1,38 @@
+<h1>Редактирование темы</h1>
+<form>
+  <div class="form-group">
+      <div class="form-row">
+          <label>Выберете тему для изменения</label>
+          <select id="inputType" class="form-control" [(ngModel)]="selected" name="selected">
+            <option *ngFor="let topic of topicsAll; let i = index" [ngValue]="topic">{{
+              topic.name + " " + coursesAll[i].name
+            }}</option>
+          </select>
+      </div>
+      <div class="form-row">
+        <label>Название</label>
+        <input class="form-control" type="text" [(ngModel)]="name" name="name">
+        <span class="control-error" *ngIf="!isValidLength(name)">Название должно быть не больше 100 символов.</span>
+        <span class="control-error" *ngIf="!isEmpty(name)">Название необходимо заполнить.</span>
+      </div>
+      <div class="form-row">
+          <label>Количество вопросов</label>
+          <input class="form-control" type="text" [(ngModel)]="count" name="count">
+          <span class="control-error" *ngIf="!isNumber(count)">Количество должно быть целым числом.</span>
+      </div>
+      <div class="form-row">
+          <label>Выберете направление</label>
+          <select id="inputType" class="form-control" [(ngModel)]="selectedCouse" name="selectedCouse">
+            <option *ngFor="let course of courses" [ngValue]="course">{{
+              course.name
+            }}</option>
+          </select>
+      </div>
+      <br>
+      <div class="form-row text-center button">
+          <button type="button" class="btn btn-act btn-default" (click)="updateTopic()">
+            Обновить
+          </button>
+       </div>
+  </div>
+</form>

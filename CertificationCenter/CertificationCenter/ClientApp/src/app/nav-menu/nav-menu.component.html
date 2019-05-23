@@ -1,0 +1,93 @@
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' [routerLink]='["/"]'>Certification Center</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+          <ul class='nav navbar-nav mainmenu'>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/course/course-create"]' (click)='collapse()'> Направление</a>
+              <ul class='nav navbar-nav submenu'>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/course/course-create"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-plus'></span> Создание направления
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/course/course-update"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-pencil'></span> Редактирование направления
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/course/course-view"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-search'></span> Просмотр направлений
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/topic/topic-create"]' (click)='collapse()'> Тема</a>
+              <ul class='nav navbar-nav submenu'>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/topic/topic-create"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-plus'></span> Создание темы
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/topic/topic-update"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-pencil'></span> Редактирование темы
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/topic/topic-view"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-search'></span> Просмотр тем
+                  </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/topic/topic-delete"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-remove'></span> Удаление темы
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/question/question-create"]' (click)='collapse()'> Вопрос</a>
+              <ul class='nav navbar-nav submenu'>
+                <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/question/question-create"]' (click)='collapse()'>
+                    <span class='glyphicon glyphicon-plus'></span> Создание вопроса
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+                <a [routerLink]='["/specialist/specialist-create"]' (click)='collapse()'> Специалист</a>
+                <ul class='nav navbar-nav submenu'>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-create"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-plus'></span> Регистрация специалиста
+                    </a>
+                  </li>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-update"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-pencil'></span> Обновление специалиста
+                    </a>
+                  </li>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-view"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-search'></span> Просмотр специалистов
+                    </a>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div>

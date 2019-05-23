@@ -1,0 +1,22 @@
+@media (max-width: 767px) {
+  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+  .body-content {
+    padding-top: 50px;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}

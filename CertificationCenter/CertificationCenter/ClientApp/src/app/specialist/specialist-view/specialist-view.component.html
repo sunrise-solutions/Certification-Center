@@ -1,0 +1,32 @@
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Отчество</th>
+        <th scope="col">Email</th>
+        <th scope="col">Пароль</th>
+        <th scope="col">Мед. учреждение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let specialist of specialists; let i = index">
+        <td>{{specialist.lastName || 'No name'}}</td>
+        <td>{{specialist.firstName || 'No name'}}</td>
+        <td>{{specialist.middleName || 'No name'}}</td>
+        <td>{{specialist.email || 'No email'}}</td>
+        <td>{{specialist.passwordHash || '********'}}</td>
+        <td>{{facilities[i].name || 'No facility'}}</td>
+      </tr>
+    </tbody>
+</table>
+<br>
+<div class="form-row text-center button">
+  <button type="button" class="btn btn-act btn-default" (click)="saveToXML()">
+    Сохранить в XML
+  </button>
+  <button type="button" class="btn btn-act btn-default" (click)="saveToXLS()">
+    Сохранить в XLS
+  </button>
+ 

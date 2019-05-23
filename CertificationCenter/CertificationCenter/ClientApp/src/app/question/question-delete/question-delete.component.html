@@ -1,0 +1,19 @@
+<h1>Удаление вопроса</h1>
+<form>
+  <div class="form-group">
+      <div class="form-row">
+          <label>Выберете тему для удаления</label>
+          <select id="inputType" class="form-control" [(ngModel)]="selected" name="selected">
+            <option *ngFor="let topic of topicsAll; let i = index" [ngValue]="topic">{{
+              topic.name + " " + coursesAll[i].name
+            }}</option>
+          </select>
+      </div>
+      <br>
+      <div class="form-row text-center button">
+          <button type="button" class="btn btn-act btn-default" (click)="deleteTopic()">
+            Удалить
+          </button>
+       </div>
+  </div>
+</form>
