@@ -22,20 +22,26 @@ export class CourseCreateComponent {
   public qualification = 0;
 
   public createCourse() {
-      this.course.name = this.courseName;
-      console.log(this.course.name);
-      this.course.qualification = this.qualification;
-      console.log(this.course.qualification);
-      const body = {Name: this.courseName, Qualification: this.qualification};
-      console.log(body);
-      return this.http.post('http://localhost:55683//api/Course/CreateCourse', body).subscribe(
-        () => {console.log("success");
-          this.ntf.success('Успешно', 'Направление добавлено');},
-          error => {
-            this.ntf.error('Ошибка', 'Направление не добавлено');
-            return console.log(error);
-          }
-      );
+      if (this.isValidLength(this.courseName) && this.isEmpty(this.courseName) && this.isNumber(this.qualification))
+      {
+        this.course.name = this.courseName;
+        console.log(this.course.name);
+        this.course.qualification = this.qualification;
+        console.log(this.course.qualification);
+        const body = {Name: this.courseName, Qualification: this.qualification};
+        console.log(body);
+        return this.http.post('http://localhost:55683//api/Course/CreateCourse', body).subscribe(
+          () => {console.log("success");
+            this.ntf.success('Успешно', 'Направление добавлено');},
+            error => {
+              this.ntf.error('Ошибка', 'Направление не добавлено');
+              return console.log(error);
+            }
+        );
+      }
+      else {
+        this.ntf.error('Ошибка', 'Данные не верные');
+      }
 
   }
 

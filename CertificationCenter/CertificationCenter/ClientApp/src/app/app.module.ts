@@ -15,6 +15,9 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { SpecialistCreateComponent } from './specialist/specialist-create/specialist-create.component';
+import { SpecialistUpdateComponent } from './specialist/specialist-update/specialist-update.component';
+import { SpecialistViewComponent } from './specialist/specialist-view/specialist-view.component';
 //import { MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -25,6 +28,9 @@ import { MaterialModule } from './material/material.module';
     CourseCreateComponent,
     CourseUpdateComponent,
     CourseViewComponent,
+    SpecialistCreateComponent,
+    SpecialistUpdateComponent,
+    SpecialistViewComponent,
     FetchDataComponent
   ],
   imports: [
@@ -41,6 +47,9 @@ import { MaterialModule } from './material/material.module';
       { path: 'course/course-update', component: CourseUpdateComponent },
       { path: 'course/course-view', component: CourseViewComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'specialist/specialist-create', component: SpecialistCreateComponent },
+      { path: 'specialist/specialist-update', component: SpecialistUpdateComponent },
+      { path: 'specialist/specialist-view', component: SpecialistViewComponent }
     ]),
     SimpleNotificationsModule.forRoot({
       timeOut: 5000,

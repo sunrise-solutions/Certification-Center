@@ -27,7 +27,7 @@
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                   <a [routerLink]='["/course/course-view"]' (click)='collapse()'>
-                    <span class='glyphicon glyphicon-search'></span> Поиск направления
+                    <span class='glyphicon glyphicon-search'></span> Просмотр направлений
                   </a>
                 </li>
               </ul>
@@ -71,6 +71,26 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+                <a [routerLink]='["/specialist/specialist-create"]' (click)='collapse()'> Специалист</a>
+                <ul class='nav navbar-nav submenu'>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-create"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-plus'></span> Регистрация специалиста
+                    </a>
+                  </li>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-update"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-pencil'></span> Обновление специалиста
+                    </a>
+                  </li>
+                  <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/specialist/specialist-view"]' (click)='collapse()'>
+                      <span class='glyphicon glyphicon-search'></span> Просмотр специалистов
+                    </a>
+                  </li>
+                </ul>
             </li>
           </ul>
         </div>

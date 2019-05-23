@@ -33,6 +33,8 @@ export class CourseUpdateComponent implements OnInit{
   }
 
   public updateCourse() {
+    if (this.isValidLength(this.courseName) && this.isEmpty(this.courseName) && this.isNumber(this.qualification))
+    {
       this.course.name = this.courseName;
       console.log(this.course.name);
       this.course.qualification = this.qualification;
@@ -47,7 +49,9 @@ export class CourseUpdateComponent implements OnInit{
             return console.log(error);
           }
       );
-
+    } else {
+      this.ntf.error('Ошибка', 'Данные не верные');
+    }
   }
 
   isValidLength(str: String) {

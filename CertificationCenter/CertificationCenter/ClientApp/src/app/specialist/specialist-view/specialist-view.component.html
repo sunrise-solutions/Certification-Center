@@ -1,0 +1,24 @@
+<br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Отчество</th>
+        <th scope="col">Email</th>
+        <th scope="col">Пароль</th>
+        <th scope="col">Мед. учреждение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let specialist of specialists;let facilityIndex = index;">
+        <td>{{specialist.lastName || 'No name'}}</td>
+        <td>{{specialist.firstName || 'No name'}}</td>
+        <td>{{specialist.middleName || 'No name'}}</td>
+        <td>{{specialist.email || 'No email'}}</td>
+        <td>{{specialist.passwordHash || 'No password'}}</td>
+        <td>{{facilities[facilityIndex] || 'No facility'}}</td>
+      </tr>
+    </tbody>
+</table>
+ 
