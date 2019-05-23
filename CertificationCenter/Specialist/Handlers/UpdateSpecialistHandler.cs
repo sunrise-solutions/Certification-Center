@@ -24,8 +24,8 @@ namespace Specialist.Handlers
             {
                 conn.Open();
 
-                string query = string.Format("update specialists set last_name = '{1}', first_name= '{2}', middle_name = '{3}'," +
-                    "email = '{4}', password_hash = '{5}', Health_Facilities_faculty_id = {6} where specialist_id ={0}",
+                string query = string.Format("update specialists set `last_name`='{1}', `first_name`='{2}', `middle_name`='{3}'," +
+                    "`email`='{4}', `password_hash`='{5}', `Health_Facilities_faculty_id`={6} where `specialist_id`={0}",
                     specialistId.ToString(),
                     model.LastName,
                     model.FirstName,

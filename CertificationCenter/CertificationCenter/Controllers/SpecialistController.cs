@@ -10,7 +10,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class SpecialistController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet]
         public IEnumerable<MedicalSpecialist> GetAllMedicalSpecialists()
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
@@ -18,15 +18,15 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
-        [HttpGet("[action]")]
-        public IEnumerable<MedicalSpecialist> GetMedicalSpecialistById(int id)
+        [HttpGet("{id:int:min(1)}")]
+        public MedicalSpecialist GetMedicalSpecialistById(int id)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
             GetSpecialistByIdHandler handler = new GetSpecialistByIdHandler(context);
             return handler.Handle(id);
         }
 
-        [HttpGet("[action]")]
+        [HttpGet("EmailAndPassword")]
         public IEnumerable<MedicalSpecialist> GetMedicalSpecialistByEmailAndPassword(string email, string password)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
@@ -34,7 +34,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(email, password);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateMedicalSpecialist([FromBody] CreateSpecialistCommand request)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
@@ -42,12 +42,12 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateMedicalSpecialist(int specialistId, [FromBody] CreateSpecialistCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateMedicalSpecialist(int id, [FromBody] CreateSpecialistCommand request)
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
             UpdateSpecialistHandler handler = new UpdateSpecialistHandler(context);
-            return handler.Handle(specialistId, request);
+            return handler.Handle(id, request);
         }
     }
 }

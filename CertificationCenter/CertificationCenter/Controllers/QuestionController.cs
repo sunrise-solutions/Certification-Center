@@ -9,7 +9,7 @@ namespace CertificationCenter.Controllers
     [Route("api/[controller]")]
     public class QuestionController : Controller
     {
-        [HttpGet("[action]")]
+        [HttpGet("{topic:int:min(1)}")]
         public IEnumerable<Question.Model.Question> GetQuestionsByTopic(int topic/*, int course*/)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
@@ -17,7 +17,7 @@ namespace CertificationCenter.Controllers
             return handler.Handle(topic/*, course*/);
         }
 
-        [HttpPost("[action]")]
+        [HttpPost]
         public bool CreateQuestion([FromBody] CreateQuestionCommand request)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
@@ -25,20 +25,20 @@ namespace CertificationCenter.Controllers
             return handler.Handle(request);
         }
 
-        [HttpDelete("[action]")]
-        public bool DeleteQuestion(int questionId, int topicId, int courseId)
+        [HttpDelete("{id:int:min(1)}")]
+        public bool DeleteQuestion(int id, int topicId, int courseId)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             DeleteQuestionHandler handler = new DeleteQuestionHandler(context);
-            return handler.Handle(questionId, topicId, courseId);
+            return handler.Handle(id, topicId, courseId);
         }
 
-        [HttpPut("[action]")]
-        public bool UpdateQuestion(int questionId, [FromBody] CreateQuestionCommand request)
+        [HttpPut("{id:int:min(1)}")]
+        public bool UpdateQuestion(int id, [FromBody] CreateQuestionCommand request)
         {
             QuestionContext context = HttpContext.RequestServices.GetService(typeof(QuestionContext)) as QuestionContext;
             UpdateQuestionHandler handler = new UpdateQuestionHandler(context);
-            return handler.Handle(questionId, request);
+            return handler.Handle(id, request);
         }
     }
 }

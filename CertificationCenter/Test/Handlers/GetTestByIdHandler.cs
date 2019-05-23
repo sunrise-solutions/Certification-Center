@@ -16,7 +16,7 @@ namespace Test.Handlers
             _context = context;
         }
 
-        public List<TrainingTest> Handle(int testId)
+        public TrainingTest Handle(int testId)
         {
             List<TrainingTest> list = new List<TrainingTest>();
 
@@ -42,7 +42,7 @@ namespace Test.Handlers
                     }
                 }
             }
-            return list;
+            return list[0];
         }
     }
 }

@@ -1,16 +1,35 @@
 <h1>Редактирование направления</h1>
-<div>
-  <div>
-    <label>Идентификатор </label>
-    <input type="text" ng-model="id">
+<br>
+<form>
+  <div class="form-group">
+    <div class="form-row">
+      <label>Выберете направление для изменения:</label>
+      <select id="inputType" class="form-control" [(ngModel)]="selected" name="selected">
+        <option *ngFor="let course of coursesAll" [ngValue]="course">
+          {{
+                course.name
+          }}
+        </option>
+      </select>
+    </div>
+    <br>
+    <div class="form-row">
+      <label>Название направления:</label>
+      <input class="form-control" type="text" [(ngModel)]="courseName" name="courseName">
+      <span class="control-error" *ngIf="!isValidLength(courseName)">Название должно быть не больше 45 символов.</span>
+      <span class="control-error" *ngIf="!isEmpty(courseName)">Название необходимо заполнить.</span>
+    </div>
+    <br>
+    <div class="form-row">
+      <label>Квалификация (номер):</label>
+      <input class="form-control" type="text" [(ngModel)]="qualification" name="qualification">
+      <span class="control-error" *ngIf="!isNumber(qualification)">Квалификация должна быть целой цифрой.</span>
+    </div>
+    <br>
+    <div class="form-row text-center button">
+      <button type="button" class="btn btn-act btn-default" (click)="updateCourse()">
+        Обновить
+      </button>
+    </div>
   </div>
-  <div>
-    <label>Название направления </label>
-    <input type="text" ng-model="courseName">
-  </div>
-  <div>
-    <label>Квалификация(номер) </label>
-    <input type="text" ng-model="qualification">
-  </div>
-</div>
-<button type="button" class="btn btn-act btn-full" (click)="updateCourse()">Обновить</button>
+</form>

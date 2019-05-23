@@ -14,7 +14,7 @@ namespace Topic.Handlers
             _context = context;
         }
 
-        public List<Model.Topic> Handle(int topicId)
+        public Model.Topic Handle(int topicId)
         {
             List<Model.Topic> list = new List<Model.Topic>();
 
@@ -50,7 +50,7 @@ namespace Topic.Handlers
                 }
 
             }
-            return list;
+            return list[0];
         }
     }
 }

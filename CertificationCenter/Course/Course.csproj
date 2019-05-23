@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Gmg.MicrosoftOfficeInteropExcel" Version="1.0.0" />
     <PackageReference Include="Mapster" Version="4.0.0" />
     <PackageReference Include="MySql.Data" Version="8.0.15" />
   </ItemGroup>

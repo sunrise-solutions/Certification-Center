@@ -1,4 +1,5 @@
 export class Course{
-    Name: string;
-    Qualification: number;
+    id: number;
+    name: string;
+    qualification: number;
 }

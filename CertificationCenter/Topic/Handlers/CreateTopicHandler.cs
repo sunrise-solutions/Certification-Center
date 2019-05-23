@@ -23,13 +23,13 @@ namespace Topic.Handlers
             {
                 conn.Open();
                 string query = string.Format("insert into Topics(topic_id, topic_name, count_of_questions, Courses_course_id) " +
-                    "values('{0}', '{1}', '{2}', '{3}')", id, model.Name, model.CountOfQuestions,model.CourseId);
+                    "values('{0}', '{1}', '{2}', '{3}')", id, model.Name, model.CountOfQuestions, model.CourseId);
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 try
                 {
                     cmd.ExecuteNonQuery();
                 }
-                catch
+                catch (Exception ex)
                 {
                     return false;
                 }
