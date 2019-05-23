@@ -7,7 +7,8 @@ import { Facility } from '../Models/Facility';
 @Component({
   selector: 'app-specialist-view-component',
   templateUrl: './specialist-view.component.html',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['../specialist.component.css']
 })
 export class SpecialistViewComponent implements OnInit{
   id = 0;

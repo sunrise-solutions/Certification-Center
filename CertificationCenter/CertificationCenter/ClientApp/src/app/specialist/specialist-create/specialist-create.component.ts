@@ -8,7 +8,8 @@ import { Facility } from '../Models/Facility';
 
 @Component({
   selector: 'app-specialist-create-component',
-  templateUrl: './specialist-create.component.html'
+  templateUrl: './specialist-create.component.html',
+  styleUrls: ['../specialist.component.css']
 })
 
 export class SpecialistCreateComponent implements OnInit{

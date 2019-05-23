@@ -1,15 +1,21 @@
 <br>
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Название направления</th>
-        <th scope="col">Квалификация (номер)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr mdbTableCol *ngFor="let course of courses">
-        <td>{{course.name || 'No name'}}</td>
-        <td>{{course.qualification || 0}}</td>
-      </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Название направления</th>
+      <th scope="col">Квалификация (номер)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let course of courses">
+      <td>{{course.name || 'No name'}}</td>
+      <td>{{course.qualification || 0}}</td>
+    </tr>
+  </tbody>
 </table>
+<br>
+<div class="form-row text-center button">
+  <button type="button" class="btn btn-act btn-default">
+    Сохранить в XML
+  </button>
+</div>

@@ -18,6 +18,14 @@ namespace CertificationCenter.Controllers
             return handler.Handle();
         }
 
+        //[HttpGet]
+        //public bool WriteAllCoursesToXML()
+        //{
+        //    CourseContext context = HttpContext.RequestServices.GetService(typeof(CourseContext)) as CourseContext;
+        //    WriteAllCoursesToXMLHandler handler = new WriteAllCoursesToXMLHandler(context);
+        //    return handler.Handle();
+        //}
+
         [HttpGet("{id:int:min(1)}")]
         public IEnumerable<MedicalCourse> GetCourseById(int id)
         {

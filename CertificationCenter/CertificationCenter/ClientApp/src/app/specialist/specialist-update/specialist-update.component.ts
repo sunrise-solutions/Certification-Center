@@ -6,7 +6,8 @@ import { Facility } from '../Models/Facility';
 
 @Component({
   selector: 'app-specialist-update-component',
-  templateUrl: './specialist-update.component.html'
+  templateUrl: './specialist-update.component.html',
+  styleUrls: ['../specialist.component.css']
 })
 export class SpecialistUpdateComponent implements OnInit{
   constructor(

@@ -26,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientApp\src\app\course\course-view\XMLReader.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CertificationTest\CertificationTest.csproj" />
     <ProjectReference Include="..\Course\Course.csproj" />
     <ProjectReference Include="..\HealthFacility\HealthFacility.csproj" />
