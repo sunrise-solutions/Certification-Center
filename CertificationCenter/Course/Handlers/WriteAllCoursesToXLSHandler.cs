@@ -68,14 +68,10 @@ namespace Course.Handlers
             };
 
             var worksheet = excel.Workbook.Worksheets["Courses"];
-
             worksheet.Cells[1, 1].LoadFromArrays(headerRow);
+            worksheet.Cells[2, 1].LoadFromCollection(courses);
 
-                worksheet.Cells[2, 1].LoadFromCollection(courses);
-
-
-
-            FileInfo excelFile = new FileInfo(@"D:\courses.xlsx");
+            FileInfo excelFile = new FileInfo(@"courses.xlsx");
             excel.SaveAs(excelFile);
             return true;
         }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Specialist } from '../Models/Specialist';
 import { API_BASE_URL } from '../../shared/shared.module';
 import { Facility } from '../Models/Facility';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-specialist-view-component',
@@ -17,7 +18,7 @@ export class SpecialistViewComponent implements OnInit{
   public facilities: Facility[] = [];
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient, private ntf: NotificationsService
   ) {}
 
   ngOnInit() {
@@ -54,6 +55,38 @@ export class SpecialistViewComponent implements OnInit{
      );
     
      return f;
+  }
+
+  saveToXML()
+  {
+    this.http.get('http://localhost:55683/api/Specialist/xml')
+    .subscribe(
+      (result: boolean)=> { 
+        if (result) 
+        {
+          this.ntf.success('Успешно', 'Данные сохранены в файл specialists.xml');
+        }
+        else{
+          this.ntf.error('Ошибка', 'Данные могут быть сохранены');
+        }
+        console.log(result); // в консоли
+   }, (error) => { console.log('an error occured!'); console.log(error);}
+    );
+  }
+
+  saveToXLS() {
+    this.http.get('http://localhost:55683/api/Specialist/xls')
+      .subscribe(
+        (result: boolean) => {
+          if (result) {
+            this.ntf.success('Успешно', 'Данные сохранены в файл specialists.xls');
+          }
+          else {
+            this.ntf.error('Ошибка', 'Данные могут быть сохранены');
+          }
+          console.log(result); // в консоли
+        }, (error) => { console.log('an error occured!'); console.log(error); }
+      );
   }
   
 }

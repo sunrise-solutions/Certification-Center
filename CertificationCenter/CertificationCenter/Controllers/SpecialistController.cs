@@ -4,6 +4,7 @@ using Specialist.Commands;
 using Specialist.Data;
 using Specialist.Model;
 using Specialist.Handlers;
+using Specialists.Handlers;
 
 namespace CertificationCenter.Controllers
 {
@@ -15,6 +16,22 @@ namespace CertificationCenter.Controllers
         {
             SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
             GetAllSpecialistsHandler handler = new GetAllSpecialistsHandler(context);
+            return handler.Handle();
+        }
+
+        [HttpGet("xml")]
+        public bool WriteAllSpecialistsToXML()
+        {
+            SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
+            WriteAllSpecialistsToXMLHandler handler = new WriteAllSpecialistsToXMLHandler(context);
+            return handler.Handle();
+        }
+
+        [HttpGet("xls")]
+        public bool WriteAllSpecialistsToXLS()
+        {
+            SpecialistContext context = HttpContext.RequestServices.GetService(typeof(SpecialistContext)) as SpecialistContext;
+            WriteAllSpecialistsToXLSHandler handler = new WriteAllSpecialistsToXLSHandler(context);
             return handler.Handle();
         }
 

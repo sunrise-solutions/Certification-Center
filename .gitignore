@@ -231,3 +231,7 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/CertificationCenter/CertificationCenter/courses.xlsx
+/CertificationCenter/CertificationCenter/courses.xml
+/CertificationCenter/CertificationCenter/specialists.xlsx
+/CertificationCenter/CertificationCenter/specialists.xml

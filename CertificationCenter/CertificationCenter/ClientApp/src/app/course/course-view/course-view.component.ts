@@ -50,5 +50,20 @@ export class CourseViewComponent implements OnInit{
    }, (error) => { console.log('an error occured!'); console.log(error);}
     );
   }
+
+  saveToXLS() {
+    this.http.get('http://localhost:55683/api/Course/xls')
+      .subscribe(
+        (result: boolean) => {
+          if (result) {
+            this.ntf.success('Успешно', 'Данные сохранены в файл course.xls');
+          }
+          else {
+            this.ntf.error('Ошибка', 'Данные могут быть сохранены');
+          }
+          console.log(result); // в консоли
+        }, (error) => { console.log('an error occured!'); console.log(error); }
+      );
+  }
   
 }
