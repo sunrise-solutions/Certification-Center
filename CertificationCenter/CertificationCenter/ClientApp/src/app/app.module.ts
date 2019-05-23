@@ -23,6 +23,9 @@ import { TopicUpdateComponent } from './topic/topic-update/topic-update.componen
 import { TopicViewComponent } from './topic/topic-view/topic-view.component';
 import { TopicDeleteComponent } from './topic/topic-delete/topic-delete.component';
 import { FooterComponent } from './footer/footer.component';
+import { QuestionCreateComponent } from './question/question-create/question-create.component';
+import { QuestionDeleteComponent } from './question/question-delete/question-delete.component';
+import { QuestionViewComponent } from './question/question-view/question-view.component';
 //import { MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -42,6 +45,9 @@ import { FooterComponent } from './footer/footer.component';
     TopicDeleteComponent,
     FetchDataComponent,
     FooterComponent,
+    QuestionCreateComponent,
+    QuestionViewComponent,
+    QuestionDeleteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -63,7 +69,10 @@ import { FooterComponent } from './footer/footer.component';
       { path: 'topic/topic-create', component: TopicCreateComponent },
       { path: 'topic/topic-update', component: TopicUpdateComponent },
       { path: 'topic/topic-view', component: TopicViewComponent },
-      { path: 'topic/topic-delete', component: TopicDeleteComponent }
+      { path: 'topic/topic-delete', component: TopicDeleteComponent },
+      { path: 'question/question-create', component: QuestionCreateComponent },
+      { path: 'question/question-view', component: QuestionViewComponent },
+      { path: 'question/question-delete', component: QuestionDeleteComponent }
     ]),
     SimpleNotificationsModule.forRoot({
       timeOut: 5000,

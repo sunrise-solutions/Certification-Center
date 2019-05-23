@@ -2,26 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { HttpClient } from '@angular/common/http';
 import { Course } from '../../course/Models/Course';
-import { Topic } from '../Models/Topic';
+import { Question } from '../Models/Question';
 
 @Component({
-  selector: 'app-topic-delete-component',
-  templateUrl: './topic-delete.component.html'
+  selector: 'app-question-delete-component',
+  templateUrl: './question-delete.component.html'
 })
-export class TopicDeleteComponent implements OnInit{
+export class QuestionDeleteComponent implements OnInit{
   constructor(
     private http: HttpClient, private ntf: NotificationsService
   ) { }
 
   public coursesAll: Course[] = [];
-  public topicsAll: Topic[] = [];
-  public selected: Topic;
+  public topicsAll: Question[] = [];
+  public selected: Question;
 
   public name = "";
   public count = 0;
 
   ngOnInit() {
-    this.http.get<Topic[]>('http://localhost:55683/' + 'api/Topic').subscribe((result: Topic[]) => {
+    this.http.get<Question[]>('http://localhost:55683/' + 'api/Question').subscribe((result: Question[]) => {
       this.topicsAll = result;
       for (let index = 0; index < result.length; index++) {
         this.coursesAll.push(this.findCourse(result[index].courseId));
@@ -47,10 +47,10 @@ export class TopicDeleteComponent implements OnInit{
      return f;
   }
 
-  public deleteTopic() {
+  public deleteQuestion() {
     if (this.isNumber(this.selected.id))
     {
-      return this.http.delete('http://localhost:55683/api/Topic/' + this.selected.id).subscribe(
+      return this.http.delete('http://localhost:55683/api/Question/' + this.selected.id).subscribe(
         () => {console.log("success");
           this.ntf.success('Успешно', 'Тема удалена');},
           error => {
