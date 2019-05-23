@@ -16,7 +16,7 @@ export class SpecialistUpdateComponent implements OnInit{
 
   public specialist: Specialist = new Specialist();
   public facilities: Facility[] = [];
-  public sprcialistsAll: Specialist[] = [];
+  public specialistsAll: Specialist[] = [];
   public id = 0;
   public selected: Specialist;
   public selectedFacility: Facility;
@@ -34,7 +34,7 @@ export class SpecialistUpdateComponent implements OnInit{
       error => console.error(error));
 
     this.http.get<Specialist[]>('http://localhost:55683/' + 'api/Specialist').subscribe((result: Specialist[]) => {
-      this.sprcialistsAll = result;
+      this.specialistsAll = result;
     console.log(result);},
       error => console.error(error));  
   }

@@ -1,10 +1,10 @@
-<h1>Редактирование направления</h1>
+<h1>Редактирование специалиста</h1>
 <form>
   <div class="form-group">
       <div class="form-row">
           <label>Выберете специалиста для изменения</label>
           <select id="inputType" class="form-control" [(ngModel)]="selected" name="selected">
-            <option *ngFor="let specialist of sprcialistsAll" [ngValue]="specialist">{{
+            <option *ngFor="let specialist of specialistsAll" [ngValue]="specialist">{{
                 specialist.lastName + " " + specialist.firstName + " " + specialist.middleName
             }}</option>
           </select>
