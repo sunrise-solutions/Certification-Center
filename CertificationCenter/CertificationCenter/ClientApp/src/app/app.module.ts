@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
 import { CourseViewComponent } from './course/course-view/course-view.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,7 +42,6 @@ import { QuestionViewComponent } from './question/question-view/question-view.co
     TopicUpdateComponent,
     TopicViewComponent,
     TopicDeleteComponent,
-    FetchDataComponent,
     FooterComponent,
     QuestionCreateComponent,
     QuestionViewComponent,
@@ -62,7 +60,6 @@ import { QuestionViewComponent } from './question/question-view/question-view.co
       { path: 'course/course-create', component: CourseCreateComponent },
       { path: 'course/course-update', component: CourseUpdateComponent },
       { path: 'course/course-view', component: CourseViewComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'specialist/specialist-create', component: SpecialistCreateComponent },
       { path: 'specialist/specialist-update', component: SpecialistUpdateComponent },
       { path: 'specialist/specialist-view', component: SpecialistViewComponent },

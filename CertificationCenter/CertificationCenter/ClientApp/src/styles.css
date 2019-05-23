@@ -5,3 +5,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+.custom-control-label {
+  font-weight: 400;
+}

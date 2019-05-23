@@ -1,4 +1,5 @@
 <h1>Редактирование специалиста</h1>
+<br>
 <form>
   <div class="form-group">
       <div class="form-row">
@@ -9,36 +10,42 @@
             }}</option>
           </select>
       </div>
+      <br>
       <div class="form-row">
           <label>Фамилия</label>
           <input class="form-control" type="text" [(ngModel)]="lastName" name="lastName">
           <span class="control-error" *ngIf="!isValidLength(lastName)">Фамилия должна быть не больше 45 символов.</span>
           <span class="control-error" *ngIf="!isEmpty(lastName)">Фамилия необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
             <label>Имя</label>
             <input class="form-control" type="text" [(ngModel)]="firstName" name="firstName">
             <span class="control-error" *ngIf="!isValidLength(firstName)">Имя должно быть не больше 45 символов.</span>
             <span class="control-error" *ngIf="!isEmpty(firstName)">Имя необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
             <label>Отчество</label>
             <input class="form-control" type="text" [(ngModel)]="middleName" name="middleName">
             <span class="control-error" *ngIf="!isValidLength(middleName)">Отчество должно быть не больше 45 символов.</span>
             <span class="control-error" *ngIf="!isEmpty(middleName)">Отчество необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
             <label>Email</label>
             <input class="form-control" type="text" [(ngModel)]="email" name="email">
             <span class="control-error" *ngIf="!isValidLength(email)">Email должно быть не больше 45 символов.</span>
             <span class="control-error" *ngIf="!isEmpty(email)">Email необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
             <label>Пароль</label>
             <input class="form-control" type="text" [(ngModel)]="passwordHash" name="passwordHash">
             <span class="control-error" *ngIf="!isValidLength(passwordHash)">Пароль должен быть не больше 45 символов.</span>
             <span class="control-error" *ngIf="!isEmpty(passwordHash)">Пароль необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
             <label>Выберете мед. учреждение</label>
             <select id="inputType" class="form-control" [(ngModel)]="selectedFacility" name="selectedFacility">

@@ -1,4 +1,5 @@
 <h1>Редактирование темы</h1>
+<br>
 <form>
   <div class="form-group">
       <div class="form-row">
@@ -9,17 +10,20 @@
             }}</option>
           </select>
       </div>
+      <br>
       <div class="form-row">
         <label>Название</label>
         <input class="form-control" type="text" [(ngModel)]="name" name="name">
         <span class="control-error" *ngIf="!isValidLength(name)">Название должно быть не больше 100 символов.</span>
         <span class="control-error" *ngIf="!isEmpty(name)">Название необходимо заполнить.</span>
       </div>
+      <br>
       <div class="form-row">
           <label>Количество вопросов</label>
           <input class="form-control" type="text" [(ngModel)]="count" name="count">
           <span class="control-error" *ngIf="!isNumber(count)">Количество должно быть целым числом.</span>
       </div>
+      <br>
       <div class="form-row">
           <label>Выберете направление</label>
           <select id="inputType" class="form-control" [(ngModel)]="selectedCouse" name="selectedCouse">
