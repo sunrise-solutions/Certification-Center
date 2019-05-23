@@ -26,7 +26,7 @@ namespace HealthFacility.Handlers
                 string query = string.Format("update health_facilities set name = '{1}', address= '{2}' where faculty_id={0}",
                     healthFacilityId.ToString(),
                     model.Name,
-                    model.Address);
+                    Converter.ConvertToString(model.Address));
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 

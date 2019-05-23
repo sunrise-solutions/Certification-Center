@@ -1,5 +1,6 @@
 ﻿using HealthFacility.Model;
 using System;
+using System.Text;
 
 namespace HealthFacility.Data
 {
@@ -20,6 +21,19 @@ namespace HealthFacility.Data
                 City = words[2],
                 Country = words[3]
             };
+        }
+
+        public static string ConvertToString(Address address)
+        {
+            StringBuilder result = new StringBuilder("улица ");
+            result.Append(address.Street);
+            result.Append(", дом ");
+            result.Append(address.House);
+            result.Append(", город ");
+            result.Append(address.City);
+            result.Append(", страна ");
+            result.Append(address.Country);
+            return result.ToString();
         }
     }
 }
