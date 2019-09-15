@@ -10,28 +10,88 @@
   <!--Данные таблицы-->
   <table_data name="courses">
     <row>
-      <field name="course_id">1</field>
-      <field name="course_name">A</field>
-      <field name="qualification">0</field>
-    </row>
-    <row>
-      <field name="course_id">2</field>
-      <field name="course_name">B</field>
-      <field name="qualification">0</field>
-    </row>
-    <row>
-      <field name="course_id">3</field>
-      <field name="course_name">C</field>
-      <field name="qualification">0</field>
-    </row>
-    <row>
-      <field name="course_id">4</field>
-      <field name="course_name">D</field>
-      <field name="qualification">0</field>
-    </row>
-    <row>
       <field name="course_id">5</field>
-      <field name="course_name">E</field>
+      <field name="course_name">Дерматология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">6</field>
+      <field name="course_name">Гастроэнтерология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">7</field>
+      <field name="course_name">Кардиология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">8</field>
+      <field name="course_name">Косметология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">9</field>
+      <field name="course_name">Неврология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">10</field>
+      <field name="course_name">Нейрохирургия</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">11</field>
+      <field name="course_name">Офтальмология</field>
+      <field name="qualification">2</field>
+    </row>
+    <row>
+      <field name="course_id">12</field>
+      <field name="course_name">Психиатрия</field>
+      <field name="qualification">2</field>
+    </row>
+    <row>
+      <field name="course_id">13</field>
+      <field name="course_name">Психология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">14</field>
+      <field name="course_name">Пульмонология</field>
+      <field name="qualification">2</field>
+    </row>
+    <row>
+      <field name="course_id">15</field>
+      <field name="course_name">Сердечно Сосудистая Хирургия</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">16</field>
+      <field name="course_name">Стоматология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">17</field>
+      <field name="course_name">Урология</field>
+      <field name="qualification">1</field>
+    </row>
+    <row>
+      <field name="course_id">18</field>
+      <field name="course_name">Физиотерапия и Реабилитация</field>
+      <field name="qualification">2</field>
+    </row>
+    <row>
+      <field name="course_id">19</field>
+      <field name="course_name">Хирургия</field>
+      <field name="qualification">2</field>
+    </row>
+    <row>
+      <field name="course_id">20</field>
+      <field name="course_name">Хирургия</field>
+      <field name="qualification">3</field>
+    </row>
+    <row>
+      <field name="course_id">21</field>
+      <field name="course_name">Хирургия</field>
       <field name="qualification">1</field>
     </row>
   </table_data>

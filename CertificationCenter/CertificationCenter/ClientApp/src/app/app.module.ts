@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { QuestionCreateComponent } from './question/question-create/question-create.component';
 import { QuestionDeleteComponent } from './question/question-delete/question-delete.component';
 import { QuestionViewComponent } from './question/question-view/question-view.component';
+import { TestComponent } from './test/test.component';
 //import { MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -45,7 +46,8 @@ import { QuestionViewComponent } from './question/question-view/question-view.co
     FooterComponent,
     QuestionCreateComponent,
     QuestionViewComponent,
-    QuestionDeleteComponent
+    QuestionDeleteComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -69,7 +71,8 @@ import { QuestionViewComponent } from './question/question-view/question-view.co
       { path: 'topic/topic-delete', component: TopicDeleteComponent },
       { path: 'question/question-create', component: QuestionCreateComponent },
       { path: 'question/question-view', component: QuestionViewComponent },
-      { path: 'question/question-delete', component: QuestionDeleteComponent }
+      { path: 'question/question-delete', component: QuestionDeleteComponent },
+      { path: 'test', component: TestComponent }
     ]),
     SimpleNotificationsModule.forRoot({
       timeOut: 5000,
